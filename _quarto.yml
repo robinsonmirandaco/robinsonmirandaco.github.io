@@ -1,4 +1,6 @@
 project:
+  resources:
+    - foto-perfil.png
   type: website
 
 website:
