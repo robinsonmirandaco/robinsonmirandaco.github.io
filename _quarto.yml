@@ -1,0 +1,35 @@
+project:
+  type: website
+
+website:
+  title: "Robinson Miranda"
+  description: "Machine Learning explicado paso a paso con Python"
+  site-url: https://robinsonmirandaco.github.io
+  repo-url: https://github.com/robinsonmirandaco/robinsonmirandaco.github.io
+  open-graph: true
+  navbar:
+    right:
+      - text: Blog
+        href: index.qmd
+      - text: Proyectos
+        href: proyectos.qmd
+      - text: Sobre mí
+        href: about.qmd
+      - icon: github
+        href: https://github.com/robinsonmirandaco
+      - icon: rss
+        href: index.xml
+
+lang: es
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: true
+    code-copy: true
+
+execute:
+  freeze: auto
