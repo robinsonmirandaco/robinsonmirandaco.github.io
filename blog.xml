@@ -6,9 +6,9 @@
       version="2.0">
 <channel>
 <title>Robinson Miranda</title>
-<link>https://robinsonmirandaco.github.io/</link>
-<atom:link href="https://robinsonmirandaco.github.io/index.xml" rel="self" type="application/rss+xml"/>
-<description>Machine Learning explicado paso a paso con Python</description>
+<link>https://robinsonmirandaco.github.io/blog.html</link>
+<atom:link href="https://robinsonmirandaco.github.io/blog.xml" rel="self" type="application/rss+xml"/>
+<description>Tutoriales de Machine Learning con Python, del análisis exploratorio a los modelos.</description>
 <generator>quarto-1.10.18</generator>
 <lastBuildDate>Tue, 15 Sep 2026 00:00:00 GMT</lastBuildDate>
 <item>
@@ -26,7 +26,7 @@
 
 
 
- ]]></description>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a> ]]></description>
   <category>news</category>
   <category>code</category>
   <category>analysis</category>
@@ -51,7 +51,7 @@
 
 
 
- ]]></description>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a> ]]></description>
   <category>news</category>
   <guid>https://robinsonmirandaco.github.io/posts/welcome/</guid>
   <pubDate>Sat, 12 Sep 2026 00:00:00 GMT</pubDate>

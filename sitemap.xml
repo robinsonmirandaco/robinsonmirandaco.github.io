@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://robinsonmirandaco.github.io/index.html</loc>
-    <lastmod>2026-09-15T12:48:43.589Z</lastmod>
+    <loc>https://robinsonmirandaco.github.io/blog.html</loc>
+    <lastmod>2026-09-15T13:22:00.391Z</lastmod>
   </url>
   <url>
-    <loc>https://robinsonmirandaco.github.io/posts/welcome/index.html</loc>
-    <lastmod>2026-09-15T12:48:43.590Z</lastmod>
-  </url>
-  <url>
-    <loc>https://robinsonmirandaco.github.io/about.html</loc>
-    <lastmod>2026-09-15T12:48:43.588Z</lastmod>
+    <loc>https://robinsonmirandaco.github.io/proyectos.html</loc>
+    <lastmod>2026-09-15T13:22:00.394Z</lastmod>
   </url>
   <url>
     <loc>https://robinsonmirandaco.github.io/posts/post-with-code/index.html</loc>
     <lastmod>2026-09-15T12:48:43.589Z</lastmod>
   </url>
   <url>
-    <loc>https://robinsonmirandaco.github.io/proyectos.html</loc>
+    <loc>https://robinsonmirandaco.github.io/about.html</loc>
+    <lastmod>2026-09-15T13:22:00.397Z</lastmod>
+  </url>
+  <url>
+    <loc>https://robinsonmirandaco.github.io/posts/welcome/index.html</loc>
     <lastmod>2026-09-15T12:48:43.590Z</lastmod>
+  </url>
+  <url>
+    <loc>https://robinsonmirandaco.github.io/index.html</loc>
+    <lastmod>2026-09-15T13:22:00.389Z</lastmod>
   </url>
 </urlset>

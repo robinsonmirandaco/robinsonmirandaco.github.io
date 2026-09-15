@@ -1,37 +1,79 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Robinson Miranda",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
     "section": "",
-    "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\n15 sept 2026\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n12 sept 2026\n\n\nTristan O’Malley\n\n\n\n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this blog"
-  },
-  {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code."
+    "text": "Post With Code\n\n1 minutos\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n15 sept 2026\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n1 minutos\n\n\nnews\n\n\n\n\n\n\n\n12 sept 2026\n\n\n\n\n\n\nNo hay resultados\n Volver arriba"
   },
   {
     "objectID": "proyectos.html",
     "href": "proyectos.html",
     "title": "Proyectos",
     "section": "",
-    "text": "Aquí iré publicando mis proyectos de Machine Learning."
+    "text": "Aquí reúno mis proyectos de Machine Learning y análisis de datos. Cada uno incluye el problema, los datos, el enfoque, el código y lo que aprendí en el camino.\n\n\n\n\n\n\nNotaMuy pronto\n\n\n\nEstoy preparando los primeros proyectos. Mientras tanto, puedes ver mi código en GitHub o leer los tutoriales del blog.\n\n\n\n\n\n Volver arriba"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n\n\n Volver arriba"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Robinson Miranda",
+    "section": "",
+    "text": "GitHub\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Email\n  \n\n  \n  \nHola, soy Robinson Miranda, ingeniero de sistemas con una maestría en Inteligencia Artificial, radicado en Miami.\nVengo del mundo de la calidad de software. Trabajé como Senior QC Analyst, Test Automation Engineer y Data Analyst, y ahí aprendí algo que hoy aplico todos los días al Machine Learning: un modelo es tan confiable como los datos y las pruebas que lo respaldan.\nHoy estoy enfocado en Machine Learning e IA. Este blog es mi forma de aprender en público: explico paso a paso, con Python y datos reales, los temas que me hubiera gustado encontrar bien explicados cuando empecé.\n\n\n\nFundamentos con Python: análisis exploratorio, limpieza y visualización de datos.\nModelos: desde regresión y clasificación hasta temas más avanzados, siempre con código que puedes ejecutar.\nProyectos: casos completos, de los datos crudos al resultado.\n\n\n\n\n\nM.Sc. en Inteligencia Artificial\nIngeniería de Sistemas\n\n\n\n\n\nCalidad y automatización de pruebas: Senior QC Analyst y Test Automation Engineer (Java, TestNG, Jenkins, Jira/Xray).\nAnálisis de datos: Data Analyst.\nMachine Learning e IA: proyectos propios y de la maestría.\n\n\n\n\n¿Tienes una pregunta sobre algún post o quieres colaborar? Escríbeme por LinkedIn o por email."
+  },
+  {
+    "objectID": "about.html#qué-vas-a-encontrar-aquí",
+    "href": "about.html#qué-vas-a-encontrar-aquí",
+    "title": "Robinson Miranda",
+    "section": "",
+    "text": "Fundamentos con Python: análisis exploratorio, limpieza y visualización de datos.\nModelos: desde regresión y clasificación hasta temas más avanzados, siempre con código que puedes ejecutar.\nProyectos: casos completos, de los datos crudos al resultado."
+  },
+  {
+    "objectID": "about.html#formación",
+    "href": "about.html#formación",
+    "title": "Robinson Miranda",
+    "section": "",
+    "text": "M.Sc. en Inteligencia Artificial\nIngeniería de Sistemas"
+  },
+  {
+    "objectID": "about.html#experiencia",
+    "href": "about.html#experiencia",
+    "title": "Robinson Miranda",
+    "section": "",
+    "text": "Calidad y automatización de pruebas: Senior QC Analyst y Test Automation Engineer (Java, TestNG, Jenkins, Jira/Xray).\nAnálisis de datos: Data Analyst.\nMachine Learning e IA: proyectos propios y de la maestría."
+  },
+  {
+    "objectID": "about.html#hablemos",
+    "href": "about.html#hablemos",
+    "title": "Robinson Miranda",
+    "section": "",
+    "text": "¿Tienes una pregunta sobre algún post o quieres colaborar? Escríbeme por LinkedIn o por email."
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts.\n\n\n\n Volver arriba"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Machine Learning explicado paso a paso",
+    "section": "",
+    "text": "Blog de Machine Learning\n\n\n\nSoy Robinson, ingeniero de sistemas con maestría en IA. Aquí explico con Python y datos reales cómo explorar, limpiar y modelar datos, desde lo básico hasta proyectos completos.\n\n\nLeer el blog Ver proyectos Sobre mí"
+  },
+  {
+    "objectID": "index.html#publicaciones-recientes",
+    "href": "index.html#publicaciones-recientes",
+    "title": "Machine Learning explicado paso a paso",
+    "section": "Publicaciones recientes",
+    "text": "Publicaciones recientes\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n15 sept 2026\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n12 sept 2026\n\n\n\n\n\n\nNo hay resultados\n\nVer todas las publicaciones →"
   }
 ]

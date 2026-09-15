@@ -1,1 +1,73 @@
-/* css styles */
+/* ---------- Portada ---------- */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  padding: 3.5rem 0 2.5rem;
+}
+.hero img.hero-foto {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--bs-primary) 18%, transparent);
+}
+.hero-texto { flex: 1 1 320px; }
+.hero-kicker {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--bs-primary);
+  margin-bottom: .4rem;
+}
+.hero h1.hero-titulo {
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 .8rem;
+  border: none;
+}
+.hero-sub { font-size: 1.15rem; opacity: .8; max-width: 38rem; }
+.hero-botones { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1.2rem; }
+.hero-botones .btn { border-radius: 999px; padding: .5rem 1.15rem; font-weight: 600; }
+
+.temas { display: flex; flex-wrap: wrap; gap: .5rem; margin: .5rem 0 2rem; }
+.temas span {
+  font-size: .85rem;
+  padding: .3rem .8rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bs-primary) 10%, transparent);
+  color: var(--bs-primary);
+  font-weight: 500;
+}
+
+.seccion-titulo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+/* ---------- Tarjetas de posts ---------- */
+.quarto-grid-item.card {
+  border-radius: .9rem;
+  border: 1px solid var(--bs-border-color);
+  transition: transform .15s ease, box-shadow .15s ease;
+  overflow: hidden;
+}
+.quarto-grid-item.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+.quarto-grid-item .card-title { font-weight: 700; }
+
+/* ---------- Posts ---------- */
+.quarto-title-banner { padding-block: 2.5rem; }
+div.sourceCode { border-radius: .6rem; }
+.callout { border-radius: .6rem; }
+
+/* ---------- Sobre mí ---------- */
+.about-entity .about-link { border-radius: 999px !important; }
