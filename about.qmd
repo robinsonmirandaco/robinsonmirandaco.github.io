@@ -1,19 +1,53 @@
 ---
-title: "About"
+title: "Robinson Miranda"
+subtitle: "Machine Learning · Datos · Calidad de software"
+pagetitle: "Sobre mí | Robinson Miranda"
 image: profile.jpg
+toc: false
 about:
-  template: jolla
+  id: sobre-mi
+  template: trestles
+  image-shape: round
+  image-width: 14em
   links:
-    - icon: bluesky
-      text: Bluesky
-      href: https://bsky.app/
+    - icon: github
+      text: GitHub
+      href: https://github.com/robinsonmirandaco
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
-    - icon: github
-      text: Github
-      href: https://github.com
-
+      href: https://www.linkedin.com/in/robinsonmirandaco/
+    - icon: envelope
+      text: Email
+      href: mailto:robinsonmirandaco@gmail.com
 ---
 
-About this blog
+:::{#sobre-mi}
+
+Hola, soy **Robinson Miranda**, ingeniero de sistemas con una **maestría en Inteligencia Artificial**, radicado en Miami.
+
+Vengo del mundo de la **calidad de software**. Trabajé como Senior QC Analyst, Test Automation Engineer y Data Analyst, y ahí aprendí algo que hoy aplico todos los días al Machine Learning: *un modelo es tan confiable como los datos y las pruebas que lo respaldan*.
+
+Hoy estoy enfocado en **Machine Learning e IA**. Este blog es mi forma de aprender en público: explico paso a paso, con Python y datos reales, los temas que me hubiera gustado encontrar bien explicados cuando empecé.
+
+## Qué vas a encontrar aquí
+
+- **Fundamentos con Python:** análisis exploratorio, limpieza y visualización de datos.
+- **Modelos:** desde regresión y clasificación hasta temas más avanzados, siempre con código que puedes ejecutar.
+- **Proyectos:** casos completos, de los datos crudos al resultado.
+
+## Formación
+
+- **M.Sc. en Inteligencia Artificial**
+- **Ingeniería de Sistemas**
+
+## Experiencia
+
+- **Calidad y automatización de pruebas:** Senior QC Analyst y Test Automation Engineer (Java, TestNG, Jenkins, Jira/Xray).
+- **Análisis de datos:** Data Analyst.
+- **Machine Learning e IA:** proyectos propios y de la maestría.
+
+## Hablemos
+
+¿Tienes una pregunta sobre algún post o quieres colaborar? Escríbeme por [LinkedIn](https://www.linkedin.com/in/robinsonmirandaco/) o por [email](mailto:robinsonmirandaco@gmail.com).
+
+:::

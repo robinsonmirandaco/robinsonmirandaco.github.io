@@ -3,33 +3,65 @@ project:
 
 website:
   title: "Robinson Miranda"
-  description: "Machine Learning explicado paso a paso con Python"
+  description: "Machine Learning explicado paso a paso con Python: análisis de datos, limpieza, modelos y proyectos reales."
   site-url: https://robinsonmirandaco.github.io
   repo-url: https://github.com/robinsonmirandaco/robinsonmirandaco.github.io
+  favicon: favicon.svg
   open-graph: true
+  twitter-card: true
+  search: true
+  back-to-top-navigation: true
+  page-navigation: true
   navbar:
+    title: "Robinson Miranda"
     right:
-      - text: Blog
+      - text: Inicio
         href: index.qmd
+      - text: Blog
+        href: blog.qmd
       - text: Proyectos
         href: proyectos.qmd
       - text: Sobre mí
         href: about.qmd
       - icon: github
         href: https://github.com/robinsonmirandaco
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/robinsonmirandaco/
+        aria-label: LinkedIn
       - icon: rss
-        href: index.xml
+        href: blog.xml
+        aria-label: RSS
+  page-footer:
+    left: "© 2026 Robinson Miranda"
+    center: "Hecho con [Quarto](https://quarto.org) y Python"
+    right:
+      - icon: github
+        href: https://github.com/robinsonmirandaco
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/robinsonmirandaco/
+        aria-label: LinkedIn
+      - icon: envelope
+        href: mailto:robinsonmirandaco@gmail.com
+        aria-label: Email
 
 lang: es
 
 format:
   html:
     theme:
-      light: cosmo
-      dark: darkly
+      light: [flatly, theme.scss]
+      dark: [darkly, theme.scss, theme-dark.scss]
+    respect-user-color-scheme: true
     css: styles.css
     toc: true
+    toc-title: "En esta página"
     code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+    smooth-scroll: true
+    link-external-newwindow: true
 
 execute:
   freeze: auto

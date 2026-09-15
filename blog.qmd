@@ -1,0 +1,16 @@
+---
+title: "Blog"
+description: "Tutoriales de Machine Learning con Python, del análisis exploratorio a los modelos."
+page-layout: full
+toc: false
+listing:
+  contents: posts
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: false
+  filter-ui: true
+  feed: true
+  fields: [image, date, title, description, categories, reading-time]
+  image-height: 180px
+---

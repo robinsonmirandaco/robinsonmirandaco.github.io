@@ -1,0 +1,24 @@
+/*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+$font-family-monospace: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+$font-size-root: 17px;
+$headings-font-weight: 700;
+
+$primary: #0f766e;          // verde azulado
+$link-color: $primary;
+$body-bg: #ffffff;
+$body-color: #1f2937;
+$navbar-bg: #ffffff;
+$navbar-fg: #374151;
+$navbar-hl: $primary;
+$footer-bg: #ffffff;
+$border-radius: .6rem;
+$code-color: #0f766e;
+$code-block-bg: #f6f8fa;
+
+/*-- scss:rules --*/
+.navbar { border-bottom: 1px solid rgba(0,0,0,.06); }
+.navbar-title { font-weight: 800; letter-spacing: -.01em; }
+h1, h2, h3 { letter-spacing: -.02em; }

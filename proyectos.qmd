@@ -1,5 +1,12 @@
 ---
 title: "Proyectos"
+description: "Proyectos de Machine Learning y análisis de datos con Python, de los datos crudos al resultado."
+toc: false
 ---
 
-Aquí iré publicando mis proyectos de Machine Learning.
+Aquí reúno mis proyectos de Machine Learning y análisis de datos. Cada uno incluye el problema, los datos, el enfoque, el código y lo que aprendí en el camino.
+
+::: {.callout-note}
+## Muy pronto
+Estoy preparando los primeros proyectos. Mientras tanto, puedes ver mi código en [GitHub](https://github.com/robinsonmirandaco) o leer los tutoriales del [blog](blog.qmd).
+:::

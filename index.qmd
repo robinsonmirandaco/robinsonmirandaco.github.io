@@ -1,15 +1,46 @@
 ---
-title: "Robinson Miranda"
-listing:
-  contents: posts
-  feed: true
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
+pagetitle: "Robinson Miranda | Machine Learning con Python"
+description: "Tutoriales didácticos de Machine Learning con Python y portafolio de proyectos."
 page-layout: full
-title-block-banner: true
+toc: false
+title-block-style: none
+listing:
+  id: recientes
+  contents: posts
+  sort: "date desc"
+  type: grid
+  max-items: 3
+  fields: [image, date, title, description, categories]
+  image-height: 180px
 ---
 
+::: {.hero}
+![](profile.jpg){.hero-foto fig-alt="Foto de Robinson Miranda"}
 
+::: {.hero-texto}
+[Blog de Machine Learning]{.hero-kicker}
+
+# Machine Learning explicado paso a paso {.hero-titulo .unnumbered .unlisted}
+
+::: {.hero-sub}
+Soy Robinson, ingeniero de sistemas con maestría en IA. Aquí explico con Python y datos reales cómo explorar, limpiar y modelar datos, desde lo básico hasta proyectos completos.
+:::
+
+::: {.hero-botones}
+[Leer el blog](blog.qmd){.btn .btn-primary}
+[Ver proyectos](proyectos.qmd){.btn .btn-outline-primary}
+[Sobre mí](about.qmd){.btn .btn-outline-secondary}
+:::
+:::
+:::
+
+::: {.temas}
+[Análisis exploratorio]{} [Limpieza de datos]{} [Visualización]{} [Modelos supervisados]{} [Evaluación de modelos]{} [Python · pandas · scikit-learn]{}
+:::
+
+## Publicaciones recientes {.seccion-titulo .unnumbered .unlisted}
+
+::: {#recientes}
+:::
+
+[Ver todas las publicaciones →](blog.qmd)
