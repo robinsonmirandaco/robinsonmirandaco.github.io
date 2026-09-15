@@ -15,7 +15,7 @@ listing:
 ---
 
 ::: {.hero}
-![](profile.jpg){.hero-foto fig-alt="Foto de Robinson Miranda"}
+![](profile.png){.hero-foto fig-alt="Foto de Robinson Miranda"}
 
 ::: {.hero-texto}
 [Blog de Machine Learning]{.hero-kicker}
