@@ -10,11 +10,11 @@
 <atom:link href="https://robinsonmirandaco.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Tutoriales de Machine Learning con Python, del análisis exploratorio a los modelos.</description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Tue, 15 Sep 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 19 Sep 2026 00:00:00 GMT</lastBuildDate>
 <item>
-  <title>Post With Code</title>
-  <dc:creator>Harlow Malloc</dc:creator>
-  <link>https://robinsonmirandaco.github.io/posts/post-with-code/</link>
+  <title>Por qué empiezo un blog de Machine Learning</title>
+  <dc:creator>Robinson Miranda</dc:creator>
+  <link>https://robinsonmirandaco.github.io/posts/bienvenida/</link>
   <description><![CDATA[ 
 
 
@@ -22,39 +22,60 @@
 
 
 
-<p>This is a post with executable code.</p>
+<p>Cuando empecé a estudiar Machine Learning en serio me pasó algo que quizá te suene: encontré miles de tutoriales que llegaban hasta <code>model.fit()</code> y ahí se quedaban. Ninguno contaba lo que de verdad ocupa el 80% del trabajo, que es entender los datos antes de modelarlos.</p>
+<p>Este blog nace de esa frustración.</p>
+<section id="quién-escribe" class="level2">
+<h2 class="anchored" data-anchor-id="quién-escribe">Quién escribe</h2>
+<p>Soy ingeniero de sistemas y llevo 13 años en tecnología, la mayor parte en calidad de software: análisis de QA, automatización de pruebas y análisis de datos. Acabo de terminar una maestría en Inteligencia Artificial.</p>
+<p>Ese recorrido me dejó una obsesión que vas a notar en todo lo que escriba: <strong>no me creo un resultado hasta que puedo reproducirlo y explicarlo</strong>. En pruebas de software aprendí que un sistema no es confiable porque funcione una vez, sino porque puedes demostrar por qué funciona. Con los modelos pasa igual.</p>
+<p>Mi tesis fue justamente sobre eso: comparar modelos de deep learning contra métodos clásicos para evaluación de riesgo crediticio, midiendo no solo qué tan bien predicen, sino qué tan estables e interpretables son.</p>
+</section>
+<section id="para-quién-es-este-blog" class="level2">
+<h2 class="anchored" data-anchor-id="para-quién-es-este-blog">Para quién es este blog</h2>
+<p>Para quien está empezando en datos y Machine Learning y quiere entender, no solo copiar y pegar. También para quien, como yo, viene de otra área de la tecnología y está haciendo la transición.</p>
+<p>No asumo que sepas estadística avanzada. Sí asumo que te animas a correr código.</p>
+</section>
+<section id="qué-vas-a-encontrar" class="level2">
+<h2 class="anchored" data-anchor-id="qué-vas-a-encontrar">Qué vas a encontrar</h2>
+<p><strong>Fundamentos con Python.</strong> Análisis exploratorio, limpieza de datos, valores faltantes, outliers, visualización. Lo aburrido que en realidad decide si un proyecto sirve o no.</p>
+<p><strong>Modelos, explicados por dentro.</strong> Regresión, clasificación, validación, métricas. Qué hace cada uno, cuándo falla y cómo darte cuenta de que falló.</p>
+<p><strong>Proyectos completos.</strong> De los datos crudos hasta una conclusión que se sostenga.</p>
+</section>
+<section id="cómo-lo-voy-a-hacer" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-lo-voy-a-hacer">Cómo lo voy a hacer</h2>
+<p>Tres reglas que me impongo:</p>
+<ol type="1">
+<li><strong>Todo el código se puede ejecutar.</strong> Cada post se escribe como un notebook y se publica con sus resultados reales, no con salidas inventadas.</li>
+<li><strong>Datasets públicos.</strong> Si quieres repetir el análisis, puedes.</li>
+<li><strong>Explicar el porqué, no solo el cómo.</strong> Un comando sin contexto se olvida en una semana.</li>
+</ol>
+</section>
+<section id="los-primeros-temas" class="level2">
+<h2 class="anchored" data-anchor-id="los-primeros-temas">Los primeros temas</h2>
+<p>Este es el plan con el que arranco:</p>
+<ul>
+<li>Análisis exploratorio de datos: primer contacto con un dataset</li>
+<li>Valores faltantes: cómo detectarlos y qué hacer con ellos</li>
+<li>Outliers: cuándo son error y cuándo son información</li>
+<li>Visualización para entender, no para decorar</li>
+<li>De los datos limpios al primer modelo</li>
+</ul>
+<p>Se irá ajustando según lo que resulte más útil.</p>
+</section>
+<section id="cómo-seguirlo" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-seguirlo">Cómo seguirlo</h2>
+<p>Puedes suscribirte por <a href="../../blog.xml">RSS</a> o escribirme si quieres que cubra algún tema. Las dudas de quien está aprendiendo son el mejor mapa para saber qué explicar.</p>
+<p>Nos leemos en el próximo post.</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a> ]]></description>
-  <category>news</category>
-  <category>code</category>
-  <category>analysis</category>
-  <guid>https://robinsonmirandaco.github.io/posts/post-with-code/</guid>
-  <pubDate>Tue, 15 Sep 2026 00:00:00 GMT</pubDate>
-  <media:content url="https://robinsonmirandaco.github.io/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Welcome To My Blog</title>
-  <dc:creator>Tristan O&#39;Malley</dc:creator>
-  <link>https://robinsonmirandaco.github.io/posts/welcome/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="https://robinsonmirandaco.github.io/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
-<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
-
-
-
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a> ]]></description>
-  <category>news</category>
-  <guid>https://robinsonmirandaco.github.io/posts/welcome/</guid>
-  <pubDate>Sat, 12 Sep 2026 00:00:00 GMT</pubDate>
+  <category>presentación</category>
+  <category>machine learning</category>
+  <guid>https://robinsonmirandaco.github.io/posts/bienvenida/</guid>
+  <pubDate>Sat, 19 Sep 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://robinsonmirandaco.github.io/posts/bienvenida/portada.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

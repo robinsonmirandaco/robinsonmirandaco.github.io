@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Post With Code\n\n1 minutos\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n15 sept 2026\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n1 minutos\n\n\nnews\n\n\n\n\n\n\n\n12 sept 2026\n\n\n\n\n\n\nNo hay resultados\n Volver arriba"
+    "text": "Por qué empiezo un blog de Machine Learning\n\n3 minutos\n\n\npresentación\n\nmachine learning\n\n\n\nVengo de 13 años en calidad de software y hoy trabajo en Machine Learning. Este blog es mi forma de aprender en público y de explicar, paso a paso y con Python, lo que a mí…\n\n\n\n19 sept 2026\n\n\n\n\n\n\nNo hay resultados\n Volver arriba"
   },
   {
     "objectID": "proyectos.html",
@@ -12,13 +12,6 @@
     "title": "Proyectos",
     "section": "",
     "text": "Aquí reúno mis proyectos de Machine Learning y análisis de datos. Cada uno incluye el problema, los datos, el enfoque, el código y lo que aprendí en el camino.\n\n\n\n\n\n\nNotaMuy pronto\n\n\n\nEstoy preparando los primeros proyectos. Mientras tanto, puedes ver mi código en GitHub o leer los tutoriales del blog.\n\n\n\n\n\n Volver arriba"
-  },
-  {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code.\n\n\n\n Volver arriba"
   },
   {
     "objectID": "about.html",
@@ -56,11 +49,53 @@
     "text": "¿Tienes una pregunta sobre algún post o quieres colaborar? Escríbeme por LinkedIn o por email."
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "posts/bienvenida/index.html",
+    "href": "posts/bienvenida/index.html",
+    "title": "Por qué empiezo un blog de Machine Learning",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts.\n\n\n\n Volver arriba"
+    "text": "Cuando empecé a estudiar Machine Learning en serio me pasó algo que quizá te suene: encontré miles de tutoriales que llegaban hasta model.fit() y ahí se quedaban. Ninguno contaba lo que de verdad ocupa el 80% del trabajo, que es entender los datos antes de modelarlos.\nEste blog nace de esa frustración."
+  },
+  {
+    "objectID": "posts/bienvenida/index.html#quién-escribe",
+    "href": "posts/bienvenida/index.html#quién-escribe",
+    "title": "Por qué empiezo un blog de Machine Learning",
+    "section": "Quién escribe",
+    "text": "Quién escribe\nSoy ingeniero de sistemas y llevo 13 años en tecnología, la mayor parte en calidad de software: análisis de QA, automatización de pruebas y análisis de datos. Acabo de terminar una maestría en Inteligencia Artificial.\nEse recorrido me dejó una obsesión que vas a notar en todo lo que escriba: no me creo un resultado hasta que puedo reproducirlo y explicarlo. En pruebas de software aprendí que un sistema no es confiable porque funcione una vez, sino porque puedes demostrar por qué funciona. Con los modelos pasa igual.\nMi tesis fue justamente sobre eso: comparar modelos de deep learning contra métodos clásicos para evaluación de riesgo crediticio, midiendo no solo qué tan bien predicen, sino qué tan estables e interpretables son."
+  },
+  {
+    "objectID": "posts/bienvenida/index.html#para-quién-es-este-blog",
+    "href": "posts/bienvenida/index.html#para-quién-es-este-blog",
+    "title": "Por qué empiezo un blog de Machine Learning",
+    "section": "Para quién es este blog",
+    "text": "Para quién es este blog\nPara quien está empezando en datos y Machine Learning y quiere entender, no solo copiar y pegar. También para quien, como yo, viene de otra área de la tecnología y está haciendo la transición.\nNo asumo que sepas estadística avanzada. Sí asumo que te animas a correr código."
+  },
+  {
+    "objectID": "posts/bienvenida/index.html#qué-vas-a-encontrar",
+    "href": "posts/bienvenida/index.html#qué-vas-a-encontrar",
+    "title": "Por qué empiezo un blog de Machine Learning",
+    "section": "Qué vas a encontrar",
+    "text": "Qué vas a encontrar\nFundamentos con Python. Análisis exploratorio, limpieza de datos, valores faltantes, outliers, visualización. Lo aburrido que en realidad decide si un proyecto sirve o no.\nModelos, explicados por dentro. Regresión, clasificación, validación, métricas. Qué hace cada uno, cuándo falla y cómo darte cuenta de que falló.\nProyectos completos. De los datos crudos hasta una conclusión que se sostenga."
+  },
+  {
+    "objectID": "posts/bienvenida/index.html#cómo-lo-voy-a-hacer",
+    "href": "posts/bienvenida/index.html#cómo-lo-voy-a-hacer",
+    "title": "Por qué empiezo un blog de Machine Learning",
+    "section": "Cómo lo voy a hacer",
+    "text": "Cómo lo voy a hacer\nTres reglas que me impongo:\n\nTodo el código se puede ejecutar. Cada post se escribe como un notebook y se publica con sus resultados reales, no con salidas inventadas.\nDatasets públicos. Si quieres repetir el análisis, puedes.\nExplicar el porqué, no solo el cómo. Un comando sin contexto se olvida en una semana."
+  },
+  {
+    "objectID": "posts/bienvenida/index.html#los-primeros-temas",
+    "href": "posts/bienvenida/index.html#los-primeros-temas",
+    "title": "Por qué empiezo un blog de Machine Learning",
+    "section": "Los primeros temas",
+    "text": "Los primeros temas\nEste es el plan con el que arranco:\n\nAnálisis exploratorio de datos: primer contacto con un dataset\nValores faltantes: cómo detectarlos y qué hacer con ellos\nOutliers: cuándo son error y cuándo son información\nVisualización para entender, no para decorar\nDe los datos limpios al primer modelo\n\nSe irá ajustando según lo que resulte más útil."
+  },
+  {
+    "objectID": "posts/bienvenida/index.html#cómo-seguirlo",
+    "href": "posts/bienvenida/index.html#cómo-seguirlo",
+    "title": "Por qué empiezo un blog de Machine Learning",
+    "section": "Cómo seguirlo",
+    "text": "Cómo seguirlo\nPuedes suscribirte por RSS o escribirme si quieres que cubra algún tema. Las dudas de quien está aprendiendo son el mejor mapa para saber qué explicar.\nNos leemos en el próximo post."
   },
   {
     "objectID": "index.html",
@@ -74,6 +109,6 @@
     "href": "index.html#publicaciones-recientes",
     "title": "Machine Learning explicado paso a paso",
     "section": "Publicaciones recientes",
-    "text": "Publicaciones recientes\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n15 sept 2026\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n12 sept 2026\n\n\n\n\n\n\nNo hay resultados\n\nVer todas las publicaciones →"
+    "text": "Publicaciones recientes\n\n\n\n\n\n\n\n\n\n\nPor qué empiezo un blog de Machine Learning\n\n\n\npresentación\n\nmachine learning\n\n\n\nVengo de 13 años en calidad de software y hoy trabajo en Machine Learning. Este blog es mi forma de aprender en público y de explicar, paso a paso y con Python, lo que a mí…\n\n\n\n19 sept 2026\n\n\n\n\n\n\nNo hay resultados\n\nVer todas las publicaciones →"
   }
 ]
