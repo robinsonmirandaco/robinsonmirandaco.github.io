@@ -2,7 +2,7 @@
 title: "Robinson Miranda"
 subtitle: "Machine Learning · Datos · Calidad de software"
 pagetitle: "Sobre mí | Robinson Miranda"
-image: foto-perfil.png
+image: foto-perfil.jpeg
 toc: false
 about:
   id: sobre-mi
