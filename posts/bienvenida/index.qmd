@@ -1,0 +1,62 @@
+---
+title: "Por qué empiezo un blog de Machine Learning"
+description: "Vengo de 13 años en calidad de software y hoy trabajo en Machine Learning. Este blog es mi forma de aprender en público y de explicar, paso a paso y con Python, lo que a mí me costó entender."
+author: "Robinson Miranda"
+date: "2026-09-19"
+categories: [presentación, machine learning]
+image: portada.jpg
+image-alt: "Portada del blog de Machine Learning de Robinson Miranda"
+toc: true
+---
+
+Cuando empecé a estudiar Machine Learning en serio me pasó algo que quizá te suene: encontré miles de tutoriales que llegaban hasta `model.fit()` y ahí se quedaban. Ninguno contaba lo que de verdad ocupa el 80% del trabajo, que es entender los datos antes de modelarlos.
+
+Este blog nace de esa frustración.
+
+## Quién escribe
+
+Soy ingeniero de sistemas y llevo 13 años en tecnología, la mayor parte en calidad de software: análisis de QA, automatización de pruebas y análisis de datos. Acabo de terminar una maestría en Inteligencia Artificial.
+
+Ese recorrido me dejó una obsesión que vas a notar en todo lo que escriba: **no me creo un resultado hasta que puedo reproducirlo y explicarlo**. En pruebas de software aprendí que un sistema no es confiable porque funcione una vez, sino porque puedes demostrar por qué funciona. Con los modelos pasa igual.
+
+Mi tesis fue justamente sobre eso: comparar modelos de deep learning contra métodos clásicos para evaluación de riesgo crediticio, midiendo no solo qué tan bien predicen, sino qué tan estables e interpretables son.
+
+## Para quién es este blog
+
+Para quien está empezando en datos y Machine Learning y quiere entender, no solo copiar y pegar. También para quien, como yo, viene de otra área de la tecnología y está haciendo la transición.
+
+No asumo que sepas estadística avanzada. Sí asumo que te animas a correr código.
+
+## Qué vas a encontrar
+
+**Fundamentos con Python.** Análisis exploratorio, limpieza de datos, valores faltantes, outliers, visualización. Lo aburrido que en realidad decide si un proyecto sirve o no.
+
+**Modelos, explicados por dentro.** Regresión, clasificación, validación, métricas. Qué hace cada uno, cuándo falla y cómo darte cuenta de que falló.
+
+**Proyectos completos.** De los datos crudos hasta una conclusión que se sostenga.
+
+## Cómo lo voy a hacer
+
+Tres reglas que me impongo:
+
+1. **Todo el código se puede ejecutar.** Cada post se escribe como un notebook y se publica con sus resultados reales, no con salidas inventadas.
+2. **Datasets públicos.** Si quieres repetir el análisis, puedes.
+3. **Explicar el porqué, no solo el cómo.** Un comando sin contexto se olvida en una semana.
+
+## Los primeros temas
+
+Este es el plan con el que arranco:
+
+- Análisis exploratorio de datos: primer contacto con un dataset
+- Valores faltantes: cómo detectarlos y qué hacer con ellos
+- Outliers: cuándo son error y cuándo son información
+- Visualización para entender, no para decorar
+- De los datos limpios al primer modelo
+
+Se irá ajustando según lo que resulte más útil.
+
+## Cómo seguirlo
+
+Puedes suscribirte por [RSS](../../blog.xml) o escribirme si quieres que cubra algún tema. Las dudas de quien está aprendiendo son el mejor mapa para saber qué explicar.
+
+Nos leemos en el próximo post.

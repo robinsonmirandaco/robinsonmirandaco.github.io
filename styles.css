@@ -71,3 +71,8 @@ div.sourceCode { border-radius: .6rem; }
 
 /* ---------- Sobre mí ---------- */
 .about-entity .about-link { border-radius: 999px !important; }
+
+.quarto-grid-item .thumbnail-image {
+  object-fit: contain;
+  background: #0b1220;
+}
