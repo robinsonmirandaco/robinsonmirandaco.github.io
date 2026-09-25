@@ -23,7 +23,7 @@ about:
 
 :::{#sobre-mi}
 
-Hola, soy **Robinson Miranda**, ingeniero de sistemas con una **maestría en Inteligencia Artificial**, radicado en Miami.
+Hola, soy **Robinson Miranda**, ingeniero de sistemas con una **maestría en Inteligencia Artificial**, radicado en Colombia.
 
 Vengo del mundo de la **calidad de software**. Trabajé como Senior QC Analyst, Test Automation Engineer y Data Analyst, y ahí aprendí algo que hoy aplico todos los días al Machine Learning: *un modelo es tan confiable como los datos y las pruebas que lo respaldan*.
 
