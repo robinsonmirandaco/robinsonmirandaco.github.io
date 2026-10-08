@@ -67,35 +67,42 @@
     "href": "about.html",
     "title": "Robinson Miranda",
     "section": "",
-    "text": "GitHub\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Email\n  \n\n  \n  \nHola, soy Robinson Miranda, ingeniero de sistemas con una maestría en Inteligencia Artificial, radicado en Colombia.\nVengo del mundo de la calidad de software. Trabajé como Senior QC Analyst, Test Automation Engineer y Data Analyst, y ahí aprendí algo que hoy aplico todos los días al Machine Learning: un modelo es tan confiable como los datos y las pruebas que lo respaldan.\nHoy estoy enfocado en Machine Learning e IA. Este blog es mi forma de aprender en público: explico paso a paso, con Python y datos reales, los temas que me hubiera gustado encontrar bien explicados cuando empecé.\n\n\n\nFundamentos con Python: análisis exploratorio, limpieza y visualización de datos.\nModelos: desde regresión y clasificación hasta temas más avanzados, siempre con código que puedes ejecutar.\nProyectos: casos completos, de los datos crudos al resultado.\n\n\n\n\n\nM.Sc. en Inteligencia Artificial\nIngeniería de Sistemas\n\n\n\n\n\nCalidad y automatización de pruebas: Senior QC Analyst y Test Automation Engineer (Java, TestNG, Jenkins, Jira/Xray).\nAnálisis de datos: Data Analyst.\nMachine Learning e IA: proyectos propios y de la maestría.\n\n\n\n\n¿Tienes una pregunta sobre algún post o quieres colaborar? Escríbeme por LinkedIn o por email."
+    "text": "GitHub\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Email\n  \n\n  \n  \nHola, soy Robinson. Soy ingeniero de sistemas, tengo una maestría en Inteligencia Artificial y vivo en Medellín, Colombia.\nLlevo 13 años en tecnología. Empecé como desarrollador y la mayor parte de mi carrera la he pasado en calidad de software: diseñando pruebas, automatizándolas y validando datos en sistemas financieros, de energía, de servicios públicos y de streaming de video.\nEse oficio me dejó una idea que hoy guía todo lo que hago con IA: un resultado no vale hasta que lo puedes reproducir y explicar. Un sistema no es confiable porque funcione una vez, sino porque puedes demostrar por qué funciona. Con los modelos de Machine Learning pasa exactamente igual.\n\n\nTrabajo como Senior Test Automation Engineer y estoy llevando ese mismo rigor al mundo de la IA. Me enfoco en tres cosas:\n\nEvaluar modelos, no solo entrenarlos: qué tan bien predicen, qué tan estables son y qué pasa cuando los datos cambian.\nCalidad de datos: la mayoría de los problemas de un modelo empiezan en los datos.\nIA aplicada a la calidad: construyo agentes y herramientas que ayudan a equipos de QA a trabajar mejor.\n\n\n\n\n\nIA explicable. Mi tesis de maestría comparó modelos de deep learning con métodos clásicos para evaluar el riesgo crediticio de pequeñas empresas, midiendo no solo su precisión sino qué tan interpretables y estables son.\nAcceso justo al crédito. Me gustaría que más pequeños negocios puedan acceder a financiación con modelos transparentes, que un banco pueda auditar y una persona pueda entender.\nCómo se comportan los modelos de lenguaje cuando saben que los están evaluando, y cómo diseñar pruebas que no se dejen engañar.\nAgentes que saben cuándo pedir ayuda. En el Factored AI & Data Hackathon 2026 construí un agente que actúa por su cuenta únicamente cuando hay evidencia estadística de que es confiable, y le devuelve el caso a una persona cuando no la hay.\n\n\n\n\nPorque cuando empecé no encontré explicaciones claras en español que fueran más allá de copiar y pegar código. Aquí explico paso a paso, con Python y datos reales, lo que a mí me costó entender.\nTambién escribo para quienes, como yo, vienen de otra área de la tecnología y quieren dar el salto a datos e IA. Ese camino se puede recorrer, y aquí lo voy contando.\n\n\n\n\nMáster en Inteligencia Artificial, Universidad Internacional de La Rioja (UNIR), 2026.\nIngeniería de Sistemas, Fundación Universitaria San Martín.\nAI Fluency: Framework & Foundations, Anthropic, 2026.\n\n\n\n\n¿Tienes una pregunta sobre algún post, quieres proponer un tema o colaborar en algo? Escríbeme por LinkedIn o por email."
   },
   {
-    "objectID": "about.html#qué-vas-a-encontrar-aquí",
-    "href": "about.html#qué-vas-a-encontrar-aquí",
+    "objectID": "about.html#lo-que-hago-hoy",
+    "href": "about.html#lo-que-hago-hoy",
     "title": "Robinson Miranda",
     "section": "",
-    "text": "Fundamentos con Python: análisis exploratorio, limpieza y visualización de datos.\nModelos: desde regresión y clasificación hasta temas más avanzados, siempre con código que puedes ejecutar.\nProyectos: casos completos, de los datos crudos al resultado."
+    "text": "Trabajo como Senior Test Automation Engineer y estoy llevando ese mismo rigor al mundo de la IA. Me enfoco en tres cosas:\n\nEvaluar modelos, no solo entrenarlos: qué tan bien predicen, qué tan estables son y qué pasa cuando los datos cambian.\nCalidad de datos: la mayoría de los problemas de un modelo empiezan en los datos.\nIA aplicada a la calidad: construyo agentes y herramientas que ayudan a equipos de QA a trabajar mejor."
+  },
+  {
+    "objectID": "about.html#lo-que-me-interesa",
+    "href": "about.html#lo-que-me-interesa",
+    "title": "Robinson Miranda",
+    "section": "",
+    "text": "IA explicable. Mi tesis de maestría comparó modelos de deep learning con métodos clásicos para evaluar el riesgo crediticio de pequeñas empresas, midiendo no solo su precisión sino qué tan interpretables y estables son.\nAcceso justo al crédito. Me gustaría que más pequeños negocios puedan acceder a financiación con modelos transparentes, que un banco pueda auditar y una persona pueda entender.\nCómo se comportan los modelos de lenguaje cuando saben que los están evaluando, y cómo diseñar pruebas que no se dejen engañar.\nAgentes que saben cuándo pedir ayuda. En el Factored AI & Data Hackathon 2026 construí un agente que actúa por su cuenta únicamente cuando hay evidencia estadística de que es confiable, y le devuelve el caso a una persona cuando no la hay."
+  },
+  {
+    "objectID": "about.html#por-qué-escribo-este-blog",
+    "href": "about.html#por-qué-escribo-este-blog",
+    "title": "Robinson Miranda",
+    "section": "",
+    "text": "Porque cuando empecé no encontré explicaciones claras en español que fueran más allá de copiar y pegar código. Aquí explico paso a paso, con Python y datos reales, lo que a mí me costó entender.\nTambién escribo para quienes, como yo, vienen de otra área de la tecnología y quieren dar el salto a datos e IA. Ese camino se puede recorrer, y aquí lo voy contando."
   },
   {
     "objectID": "about.html#formación",
     "href": "about.html#formación",
     "title": "Robinson Miranda",
     "section": "",
-    "text": "M.Sc. en Inteligencia Artificial\nIngeniería de Sistemas"
-  },
-  {
-    "objectID": "about.html#experiencia",
-    "href": "about.html#experiencia",
-    "title": "Robinson Miranda",
-    "section": "",
-    "text": "Calidad y automatización de pruebas: Senior QC Analyst y Test Automation Engineer (Java, TestNG, Jenkins, Jira/Xray).\nAnálisis de datos: Data Analyst.\nMachine Learning e IA: proyectos propios y de la maestría."
+    "text": "Máster en Inteligencia Artificial, Universidad Internacional de La Rioja (UNIR), 2026.\nIngeniería de Sistemas, Fundación Universitaria San Martín.\nAI Fluency: Framework & Foundations, Anthropic, 2026."
   },
   {
     "objectID": "about.html#hablemos",
     "href": "about.html#hablemos",
     "title": "Robinson Miranda",
     "section": "",
-    "text": "¿Tienes una pregunta sobre algún post o quieres colaborar? Escríbeme por LinkedIn o por email."
+    "text": "¿Tienes una pregunta sobre algún post, quieres proponer un tema o colaborar en algo? Escríbeme por LinkedIn o por email."
   },
   {
     "objectID": "posts/conceptos-basicos-analisis-de-datos-machine-learning/index.html",
