@@ -1,7 +1,8 @@
 ---
 title: "Robinson Miranda"
-subtitle: "Machine Learning · Datos · Calidad de software"
+subtitle: "Calidad de software · Evaluación de modelos · Machine Learning"
 pagetitle: "Sobre mí | Robinson Miranda"
+description: "Ingeniero de sistemas con maestría en Inteligencia Artificial y 13 años en calidad de software. Escribo sobre análisis de datos, Machine Learning y cómo evaluar modelos de forma confiable."
 image: foto-perfil.jpeg
 toc: false
 about:
@@ -23,31 +24,41 @@ about:
 
 :::{#sobre-mi}
 
-Hola, soy **Robinson Miranda**, ingeniero de sistemas con una **maestría en Inteligencia Artificial**, radicado en Colombia.
+Hola, soy **Robinson**. Soy ingeniero de sistemas, tengo una **maestría en Inteligencia Artificial** y vivo en Medellín, Colombia.
 
-Vengo del mundo de la **calidad de software**. Trabajé como Senior QC Analyst, Test Automation Engineer y Data Analyst, y ahí aprendí algo que hoy aplico todos los días al Machine Learning: *un modelo es tan confiable como los datos y las pruebas que lo respaldan*.
+Llevo 13 años en tecnología. Empecé como desarrollador y la mayor parte de mi carrera la he pasado en **calidad de software**: diseñando pruebas, automatizándolas y validando datos en sistemas financieros, de energía, de servicios públicos y de streaming de video.
 
-Hoy estoy enfocado en **Machine Learning e IA**. Este blog es mi forma de aprender en público: explico paso a paso, con Python y datos reales, los temas que me hubiera gustado encontrar bien explicados cuando empecé.
+Ese oficio me dejó una idea que hoy guía todo lo que hago con IA: **un resultado no vale hasta que lo puedes reproducir y explicar**. Un sistema no es confiable porque funcione una vez, sino porque puedes demostrar por qué funciona. Con los modelos de Machine Learning pasa exactamente igual.
 
-## Qué vas a encontrar aquí
+## Lo que hago hoy
 
-- **Fundamentos con Python:** análisis exploratorio, limpieza y visualización de datos.
-- **Modelos:** desde regresión y clasificación hasta temas más avanzados, siempre con código que puedes ejecutar.
-- **Proyectos:** casos completos, de los datos crudos al resultado.
+Trabajo como **Senior Test Automation Engineer** y estoy llevando ese mismo rigor al mundo de la IA. Me enfoco en tres cosas:
+
+- **Evaluar modelos**, no solo entrenarlos: qué tan bien predicen, qué tan estables son y qué pasa cuando los datos cambian.
+- **Calidad de datos**: la mayoría de los problemas de un modelo empiezan en los datos.
+- **IA aplicada a la calidad**: construyo agentes y herramientas que ayudan a equipos de QA a trabajar mejor.
+
+## Lo que me interesa
+
+- **IA explicable.** Mi tesis de maestría comparó modelos de deep learning con métodos clásicos para evaluar el riesgo crediticio de pequeñas empresas, midiendo no solo su precisión sino qué tan interpretables y estables son.
+- **Acceso justo al crédito.** Me gustaría que más pequeños negocios puedan acceder a financiación con modelos transparentes, que un banco pueda auditar y una persona pueda entender.
+- **Cómo se comportan los modelos de lenguaje** cuando saben que los están evaluando, y cómo diseñar pruebas que no se dejen engañar.
+- **Agentes que saben cuándo pedir ayuda.** En el Factored AI & Data Hackathon 2026 construí un agente que actúa por su cuenta únicamente cuando hay evidencia estadística de que es confiable, y le devuelve el caso a una persona cuando no la hay.
+
+## Por qué escribo este blog
+
+Porque cuando empecé no encontré explicaciones claras en español que fueran más allá de copiar y pegar código. Aquí explico paso a paso, con Python y datos reales, lo que a mí me costó entender.
+
+También escribo para quienes, como yo, vienen de otra área de la tecnología y quieren dar el salto a datos e IA. Ese camino se puede recorrer, y aquí lo voy contando.
 
 ## Formación
 
-- **M.Sc. en Inteligencia Artificial**
-- **Ingeniería de Sistemas**
-
-## Experiencia
-
-- **Calidad y automatización de pruebas:** Senior QC Analyst y Test Automation Engineer (Java, TestNG, Jenkins, Jira/Xray).
-- **Análisis de datos:** Data Analyst.
-- **Machine Learning e IA:** proyectos propios y de la maestría.
+- **Máster en Inteligencia Artificial**, Universidad Internacional de La Rioja (UNIR), 2026.
+- **Ingeniería de Sistemas**, Fundación Universitaria San Martín.
+- **AI Fluency: Framework & Foundations**, Anthropic, 2026.
 
 ## Hablemos
 
-¿Tienes una pregunta sobre algún post o quieres colaborar? Escríbeme por [LinkedIn](https://www.linkedin.com/in/robinsonmirandaco/) o por [email](mailto:robinsonmirandaco@gmail.com).
+¿Tienes una pregunta sobre algún post, quieres proponer un tema o colaborar en algo? Escríbeme por [LinkedIn](https://www.linkedin.com/in/robinsonmirandaco/) o por [email](mailto:robinsonmirandaco@gmail.com).
 
 :::
