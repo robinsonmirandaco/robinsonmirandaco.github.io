@@ -1,5 +1,4 @@
-prueba
-  linea `x`---
+---
 title: "Conceptos fundamentales de análisis de datos y Machine Learning: guía para empezar desde cero"
 description: "Qué es un dataset, una variable, un modelo, el overfitting o la validación cruzada. Una guía clara y en español con los conceptos básicos de análisis de datos y Machine Learning, con ejemplos en Python."
 author: "Robinson Miranda"
