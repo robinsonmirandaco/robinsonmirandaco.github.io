@@ -1,14 +1,31 @@
 ---
-title: "Conceptos fundamentales de análisis de datos y Machine Learning: guía para empezar desde cero"
+title: "Conceptos básicos de análisis de datos y Machine Learning: guía para empezar desde cero"
 description: "Qué es un dataset, una variable, un modelo, el overfitting o la validación cruzada. Una guía clara y en español con los conceptos básicos de análisis de datos y Machine Learning, con ejemplos en Python."
 author: "Robinson Miranda"
 date: "2026-10-08"
 categories: [fundamentos, análisis de datos, machine learning, glosario]
 keywords: [qué es machine learning, conceptos básicos de machine learning, análisis de datos para principiantes, glosario de machine learning en español, aprendizaje supervisado, overfitting, validación cruzada, python, scikit-learn]
+image: portada.jpg
 image-alt: "Mapa de conceptos básicos de análisis de datos y Machine Learning"
 toc: true
 toc-depth: 2
+execute:
+  warning: false
 ---
+
+```{python}
+#| include: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+TEAL, DARK, GRAY, CORAL = "#0f766e", "#1f2937", "#9ca3af", "#e76f51"
+plt.rcParams.update({
+    "figure.dpi": 110, "axes.spines.top": False, "axes.spines.right": False,
+    "axes.edgecolor": GRAY, "axes.labelcolor": DARK, "xtick.color": DARK,
+    "ytick.color": DARK, "axes.titleweight": "bold", "font.size": 11,
+})
+rng = np.random.default_rng(42)
+```
 
 Cuando empiezas en datos te encuentras con un muro de palabras: *feature*, *target*, *overfitting*, *train/test*, *validación cruzada*. Cada tutorial las usa como si ya las conocieras.
 
@@ -89,6 +106,25 @@ Son los números que resumen una variable:
 Si en una sala hay 9 personas que ganan 2 millones y entra alguien que gana 200 millones, la media se dispara a casi 22 millones. La mediana sigue en 2 millones. Por eso los ingresos casi siempre se reportan con la mediana.
 :::
 
+Así se ve en una distribución real de ingresos, donde unos pocos valores muy altos jalan la media hacia la derecha:
+
+```{python}
+#| code-fold: true
+#| code-summary: "Ver el código del gráfico"
+#| fig-cap: "En datos con cola larga, la media se aleja de la mayoría de los casos; la mediana no."
+#| fig-alt: "Histograma de ingresos con cola hacia la derecha, con la mediana marcada más a la izquierda que la media"
+ingresos = rng.lognormal(mean=1.0, sigma=0.8, size=2000) * 1.2  # millones
+
+fig, ax = plt.subplots(figsize=(8, 4))
+ax.hist(ingresos, bins=60, color=TEAL, alpha=0.75)
+ax.axvline(np.median(ingresos), color=DARK, lw=2, label=f"Mediana: {np.median(ingresos):.1f} M")
+ax.axvline(ingresos.mean(), color=CORAL, lw=2, ls="--", label=f"Media: {ingresos.mean():.1f} M")
+ax.set(xlabel="Ingreso mensual (millones)", ylabel="Número de personas",
+       title="Media vs. mediana en datos asimétricos")
+ax.legend(frameon=False)
+plt.show()
+```
+
 ### Distribución
 
 **Qué es:** la forma en que se reparten los valores de una variable. Se ve con un histograma.
@@ -107,6 +143,24 @@ Si en una sala hay 9 personas que ganan 2 millones y entra alguien que gana 200 
 
 **Por qué importa:** a veces son errores (una edad de 250 años), a veces son lo más interesante del dataset (una transacción fraudulenta). Nunca los borres sin entender qué son.
 
+El diagrama de caja (boxplot) es la forma más rápida de verlos: los puntos sueltos fuera de los "bigotes" son candidatos a outlier.
+
+```{python}
+#| code-fold: true
+#| code-summary: "Ver el código del gráfico"
+#| fig-cap: "Los puntos fuera de los bigotes son posibles outliers. Hay que investigarlos antes de decidir qué hacer."
+#| fig-alt: "Diagrama de caja de montos de transacciones con varios puntos atípicos muy por encima del resto"
+montos = np.concatenate([rng.normal(120, 30, 300), [380, 410, 455, 520]])
+
+fig, ax = plt.subplots(figsize=(8, 2.6))
+ax.boxplot(montos, vert=False, widths=0.5, patch_artist=True,
+           boxprops=dict(facecolor="#ccfbf1", edgecolor=TEAL),
+           medianprops=dict(color=DARK, lw=2),
+           flierprops=dict(marker="o", markerfacecolor=CORAL, markeredgecolor=CORAL))
+ax.set(xlabel="Monto de la transacción (USD)", yticks=[], title="Detectar outliers con un boxplot")
+plt.show()
+```
+
 ### Correlación
 
 **Qué es:** una medida de qué tanto se mueven juntas dos variables numéricas. Va de -1 a 1.
@@ -114,6 +168,27 @@ Si en una sala hay 9 personas que ganan 2 millones y entra alguien que gana 200 
 - Cerca de **1**: cuando una sube, la otra también.
 - Cerca de **-1**: cuando una sube, la otra baja.
 - Cerca de **0**: no hay relación lineal.
+
+```{python}
+#| code-fold: true
+#| code-summary: "Ver el código del gráfico"
+#| fig-cap: "Tres tipos de correlación entre dos variables numéricas."
+#| fig-alt: "Tres diagramas de dispersión: correlación positiva, negativa y sin correlación"
+x = rng.normal(0, 1, 200)
+casos = {
+    "Positiva": x + rng.normal(0, 0.4, 200),
+    "Negativa": -x + rng.normal(0, 0.4, 200),
+    "Sin relación": rng.normal(0, 1, 200),
+}
+fig, axes = plt.subplots(1, 3, figsize=(10, 3.2), sharey=True)
+for ax, (nombre, y_) in zip(axes, casos.items()):
+    r = np.corrcoef(x, y_)[0, 1]
+    ax.scatter(x, y_, s=14, color=TEAL, alpha=0.6)
+    ax.set_title(f"{nombre} (r = {r:.2f})")
+    ax.set_xticks([]); ax.set_yticks([])
+plt.tight_layout()
+plt.show()
+```
 
 ::: {.callout-warning}
 ## Correlación no es causalidad
@@ -197,6 +272,28 @@ La *regresión logística*, a pesar del nombre, se usa para **clasificación**. 
 
 **Ejemplo:** segmentar clientes en grupos según su comportamiento de compra para diseñar campañas diferentes.
 
+```{python}
+#| code-fold: true
+#| code-summary: "Ver el código del gráfico"
+#| fig-cap: "K-Means encuentra grupos en los datos sin que nadie le diga cuáles son."
+#| fig-alt: "Dos diagramas de dispersión: a la izquierda clientes sin agrupar, a la derecha los mismos clientes coloreados en tres grupos"
+from sklearn.datasets import make_blobs
+from sklearn.cluster import KMeans
+
+Xc, _ = make_blobs(n_samples=300, centers=3, cluster_std=1.1, random_state=7)
+grupos = KMeans(n_clusters=3, n_init=10, random_state=7).fit_predict(Xc)
+
+fig, axes = plt.subplots(1, 2, figsize=(9, 3.6), sharex=True, sharey=True)
+axes[0].scatter(Xc[:, 0], Xc[:, 1], s=14, color=GRAY)
+axes[0].set_title("Antes: clientes sin etiqueta")
+axes[1].scatter(Xc[:, 0], Xc[:, 1], s=14, c=[[TEAL, CORAL, DARK][g] for g in grupos])
+axes[1].set_title("Después: 3 grupos encontrados")
+for ax in axes:
+    ax.set(xlabel="Frecuencia de compra", ylabel="Ticket promedio", xticks=[], yticks=[])
+plt.tight_layout()
+plt.show()
+```
+
 ### Algoritmos comunes para empezar
 
 - **Regresión lineal:** traza la línea que mejor se ajusta a los datos. Base de la regresión.
@@ -225,6 +322,29 @@ La *regresión logística*, a pesar del nombre, se usa para **clasificación**. 
 - **Underfitting (subajuste):** el modelo es demasiado simple y no capta ni siquiera los patrones básicos. Le va mal en todo.
 
 El objetivo es el punto medio: un modelo que **generaliza**, es decir, que funciona bien con datos que nunca vio.
+
+```{python}
+#| code-fold: true
+#| code-summary: "Ver el código del gráfico"
+#| fig-cap: "Mismo dataset, tres modelos: demasiado simple, adecuado y demasiado complejo."
+#| fig-alt: "Tres gráficos con los mismos puntos y curvas de ajuste: una línea recta que no capta la forma, una curva suave que sí, y una curva muy ondulada que pasa por cada punto"
+from numpy.polynomial import Polynomial
+
+xs = np.sort(rng.uniform(0, 1, 20))
+ys = np.sin(2 * np.pi * xs) + rng.normal(0, 0.2, 20)
+grid = np.linspace(0, 1, 300)
+
+fig, axes = plt.subplots(1, 3, figsize=(10, 3.2), sharey=True)
+for ax, grado, titulo in zip(axes, [1, 4, 15],
+                             ["Underfitting", "Buen ajuste", "Overfitting"]):
+    curva = Polynomial.fit(xs, ys, grado)
+    ax.scatter(xs, ys, s=18, color=DARK, zorder=3)
+    ax.plot(grid, curva(grid), color=CORAL if grado != 4 else TEAL, lw=2)
+    ax.set_title(f"{titulo} (grado {grado})")
+    ax.set_ylim(-2, 2); ax.set_xticks([]); ax.set_yticks([])
+plt.tight_layout()
+plt.show()
+```
 
 ### Validación cruzada
 
@@ -353,6 +473,22 @@ probabilidades = modelo.predict_proba(X_test)[:, 1]
 
 print(f"ROC-AUC en test: {roc_auc_score(y_test, probabilidades):.3f}")
 print(classification_report(y_test, predicciones, target_names=datos.target_names))
+```
+
+Y la matriz de confusión, para ver exactamente en qué se equivocó el modelo:
+
+```{python}
+#| fig-cap: "Matriz de confusión del modelo sobre el conjunto de prueba."
+#| fig-alt: "Matriz de confusión de 2 por 2 con los aciertos y errores del modelo para tumores malignos y benignos"
+from sklearn.metrics import ConfusionMatrixDisplay
+
+fig, ax = plt.subplots(figsize=(4.5, 4))
+ConfusionMatrixDisplay.from_predictions(
+    y_test, predicciones, display_labels=["Maligno", "Benigno"],
+    cmap="Greens", colorbar=False, ax=ax,
+)
+ax.set(xlabel="Predicción del modelo", ylabel="Valor real", title="Matriz de confusión")
+plt.show()
 ```
 
 Lo que acabas de ver, en palabras: cargamos un **dataset**, separamos **features** y **target**, dividimos en **train y test**, armamos un **pipeline** con **escalado** y un modelo de **clasificación**, revisamos la **estabilidad** con **validación cruzada** y al final medimos con **métricas** sobre datos que el modelo nunca vio.
