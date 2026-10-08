@@ -3,12 +3,17 @@ title: "Conceptos básicos de análisis de datos y Machine Learning: guía para 
 description: "Qué es un dataset, una variable, un modelo, el overfitting o la validación cruzada. Una guía clara y en español con los conceptos básicos de análisis de datos y Machine Learning, con ejemplos en Python."
 author: "Robinson Miranda"
 date: "2026-10-08"
+date-modified: "2026-10-08"
 categories: [fundamentos, análisis de datos, machine learning, glosario]
 keywords: [qué es machine learning, conceptos básicos de machine learning, análisis de datos para principiantes, glosario de machine learning en español, aprendizaje supervisado, overfitting, validación cruzada, python, scikit-learn]
 image: portada.jpg
-image-alt: "Mapa de conceptos básicos de análisis de datos y Machine Learning"
+image-alt: "Portada del post Conceptos básicos de análisis de datos y Machine Learning, de Robinson Miranda"
 toc: true
 toc-depth: 2
+include-in-header:
+  - text: |
+      <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Conceptos básicos de análisis de datos y Machine Learning: guía para empezar desde cero", "inLanguage": "es", "datePublished": "2026-10-08", "dateModified": "2026-10-08", "image": "https://robinsonmirandaco.github.io/posts/conceptos-basicos-analisis-de-datos-machine-learning/portada.jpg", "mainEntityOfPage": "https://robinsonmirandaco.github.io/posts/conceptos-basicos-analisis-de-datos-machine-learning/", "author": {"@type": "Person", "name": "Robinson Miranda", "url": "https://robinsonmirandaco.github.io/about.html", "sameAs": ["https://github.com/robinsonmirandaco", "https://www.linkedin.com/in/robinsonmirandaco/"]}, "keywords": "machine learning, análisis de datos, glosario, python, scikit-learn, overfitting, validación cruzada"}</script>
+      <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Necesito saber mucha matemática para empezar en Machine Learning?", "acceptedAnswer": {"@type": "Answer", "text": "No para empezar. Con estadística básica y Python puedes avanzar bastante. La matemática se vuelve importante cuando quieres entender por qué los modelos se comportan como lo hacen."}}, {"@type": "Question", "name": "¿Qué lenguaje debo aprender primero para análisis de datos y Machine Learning?", "acceptedAnswer": {"@type": "Answer", "text": "Python, porque tiene las librerías más usadas (pandas, scikit-learn, PyTorch) y la comunidad más grande. SQL es el segundo idioma recomendado."}}, {"@type": "Question", "name": "¿Cuál es la diferencia entre un analista de datos y un ingeniero de Machine Learning?", "acceptedAnswer": {"@type": "Answer", "text": "El analista responde preguntas con datos y comunica hallazgos. El ingeniero de Machine Learning construye, evalúa y pone en producción modelos que hacen predicciones de forma automática."}}, {"@type": "Question", "name": "¿Qué es el overfitting en Machine Learning?", "acceptedAnswer": {"@type": "Answer", "text": "Es cuando un modelo memoriza los datos de entrenamiento, incluido el ruido, y por eso funciona muy bien con ellos pero mal con datos nuevos."}}]}</script>
 execute:
   warning: false
 ---
@@ -29,11 +34,11 @@ rng = np.random.default_rng(42)
 
 Cuando empiezas en datos te encuentras con un muro de palabras: *feature*, *target*, *overfitting*, *train/test*, *validación cruzada*. Cada tutorial las usa como si ya las conocieras.
 
-Este post es el que me habría gustado leer al principio. Es un mapa de los conceptos fundamentales, explicados en lenguaje simple y en el orden en que los vas a necesitar. Puedes leerlo de corrido o usarlo como glosario y volver cuando un término te frene.
+Este post es el que me habría gustado leer al principio (si quieres saber por qué empecé este blog, te lo cuento [aquí](../bienvenida/)). Es un mapa de los conceptos fundamentales, explicados en lenguaje simple y en el orden en que los vas a necesitar. Puedes leerlo de corrido o usarlo como glosario y volver cuando un término te frene.
 
 ::: {.callout-tip}
 ## Cómo leer este post
-Cada concepto tiene tres partes: **qué es**, **un ejemplo** y **por qué importa**. Al final hay un ejemplo completo en Python que junta casi todo.
+Cada concepto tiene tres partes: **qué es**, **un ejemplo** y **por qué importa**. Al final hay un ejemplo completo en [Python](https://www.python.org/) que junta casi todo. Puedes ejecutarlo gratis en [Google Colab](https://colab.research.google.com/) sin instalar nada.
 :::
 
 ## Parte 1. Los datos
@@ -70,7 +75,7 @@ Si tienes 1.000 clientes y 8 columnas, tienes 1.000 observaciones y 8 variables.
 
 ### Datos estructurados y no estructurados
 
-- **Estructurados:** datos en tablas con columnas definidas (una hoja de cálculo, una base de datos SQL).
+- **Estructurados:** datos en tablas con columnas definidas (una hoja de cálculo, una base de datos [SQL](https://es.wikipedia.org/wiki/SQL)).
 - **No estructurados:** texto, imágenes, audio, video. No vienen en filas y columnas.
 
 Este blog empieza por los estructurados, que es donde vive la mayoría del trabajo en empresas.
@@ -135,7 +140,7 @@ plt.show()
 
 **Qué es:** celdas vacías en tu tabla (`NaN`, `null`, `None`).
 
-**Por qué importa:** la mayoría de modelos no aceptan valores faltantes. Además, *por qué* falta un dato a veces es información en sí misma. Puedes eliminarlos, rellenarlos (imputar) o marcarlos, pero la decisión depende del contexto.
+**Por qué importa:** la mayoría de modelos no aceptan valores faltantes. Además, *por qué* falta un dato a veces es información en sí misma. Puedes eliminarlos, rellenarlos (imputar) o marcarlos, pero la decisión depende del contexto. La [guía de datos faltantes de pandas](https://pandas.pydata.org/docs/user_guide/missing_data.html) explica cómo detectarlos y tratarlos.
 
 ### Outliers (valores atípicos)
 
@@ -192,7 +197,7 @@ plt.show()
 
 ::: {.callout-warning}
 ## Correlación no es causalidad
-Las ventas de helado y los ahogamientos están correlacionados. No porque el helado cause ahogamientos, sino porque ambos suben en verano. Una correlación te da una pista, nunca una conclusión.
+Las ventas de helado y los ahogamientos están correlacionados. No porque el helado cause ahogamientos, sino porque ambos suben en verano. Una correlación te da una pista, nunca una conclusión. A esta falacia se le conoce como [*cum hoc ergo propter hoc*](https://es.wikipedia.org/wiki/Cum_hoc_ergo_propter_hoc).
 :::
 
 ### Limpieza de datos
@@ -203,7 +208,7 @@ Las ventas de helado y los ahogamientos están correlacionados. No porque el hel
 
 ### Visualización de datos
 
-**Qué es:** representar los datos en gráficos para entenderlos o comunicarlos. Los básicos:
+**Qué es:** representar los datos en gráficos para entenderlos o comunicarlos. En Python las librerías más usadas son [Matplotlib](https://matplotlib.org/) y [seaborn](https://seaborn.pydata.org/). Los básicos:
 
 - **Histograma:** distribución de una variable numérica.
 - **Diagrama de caja (boxplot):** mediana, cuartiles y outliers.
@@ -300,9 +305,9 @@ plt.show()
 - **Regresión logística:** estima la probabilidad de que algo pertenezca a una clase.
 - **Árbol de decisión:** una secuencia de preguntas sí/no. Fácil de interpretar.
 - **Random Forest:** muchos árboles que votan. Más preciso y estable que uno solo.
-- **Gradient Boosting (XGBoost, LightGBM):** árboles que se corrigen unos a otros. Muy fuertes en datos tabulares.
-- **K-Means:** el algoritmo de clustering más conocido.
-- **Redes neuronales:** capas de operaciones que aprenden patrones complejos.
+- **Gradient Boosting ([XGBoost](https://xgboost.readthedocs.io/en/stable/), [LightGBM](https://lightgbm.readthedocs.io/en/stable/)):** árboles que se corrigen unos a otros. Muy fuertes en datos tabulares.
+- **K-Means:** el [algoritmo de clustering](https://scikit-learn.org/stable/modules/clustering.html) más conocido.
+- **Redes neuronales:** capas de operaciones que aprenden patrones complejos. La librería más popular para construirlas es [PyTorch](https://pytorch.org/).
 
 ## Parte 4. Evaluar un modelo
 
@@ -350,7 +355,7 @@ plt.show()
 
 **Qué es:** en lugar de una sola división train/test, divides los datos en *k* partes (por ejemplo 5), entrenas 5 veces dejando una parte distinta para evaluar cada vez, y promedias los resultados.
 
-**Por qué importa:** te da una estimación más confiable y te muestra si el rendimiento es **estable** o si depende de la suerte de cómo partiste los datos.
+**Por qué importa:** te da una estimación más confiable y te muestra si el rendimiento es **estable** o si depende de la suerte de cómo partiste los datos. La [documentación de scikit-learn sobre validación cruzada](https://scikit-learn.org/stable/modules/cross_validation.html) lo explica con diagramas muy claros.
 
 ### Métricas de clasificación
 
@@ -365,6 +370,8 @@ plt.show()
 ## La trampa del 99% de accuracy
 Si solo el 1% de las transacciones son fraude, un modelo que siempre dice "no es fraude" tiene 99% de accuracy y no sirve para nada. Por eso en problemas desbalanceados se miran precision, recall y PR-AUC.
 :::
+
+Todas estas métricas están implementadas en el [módulo de métricas de scikit-learn](https://scikit-learn.org/stable/modules/model_evaluation.html).
 
 ### Métricas de regresión
 
@@ -385,7 +392,7 @@ Mejorar uno suele empeorar el otro. A eso se le llama el **trade-off sesgo-varia
 
 **Ejemplo:** predecir si un cliente abandonará el servicio usando una columna "fecha de cancelación". El modelo parece perfecto, pero en la vida real esa columna no existe hasta que el cliente ya se fue.
 
-**Por qué importa:** es una de las causas más comunes de modelos que brillan en el notebook y fracasan en producción.
+**Por qué importa:** es una de las causas más comunes de modelos que brillan en el notebook y fracasan en producción. scikit-learn tiene una sección dedicada a [errores comunes y buenas prácticas](https://scikit-learn.org/stable/common_pitfalls.html) que vale la pena leer.
 
 ## Parte 5. Preparar los datos para un modelo
 
@@ -397,7 +404,7 @@ Mejorar uno suele empeorar el otro. A eso se le llama el **trade-off sesgo-varia
 
 ### Encoding de variables categóricas
 
-**Qué es:** convertir texto en números. La técnica más común es **one-hot encoding**: la columna "ciudad" se convierte en varias columnas (ciudad_Medellín, ciudad_Bogotá...) con 1 o 0.
+**Qué es:** convertir texto en números. La técnica más común es **[one-hot encoding](https://scikit-learn.org/stable/modules/preprocessing.html)**: la columna "ciudad" se convierte en varias columnas (ciudad_Medellín, ciudad_Bogotá...) con 1 o 0.
 
 ### Escalado y normalización
 
@@ -407,19 +414,19 @@ Mejorar uno suele empeorar el otro. A eso se le llama el **trade-off sesgo-varia
 
 **Qué es:** una cadena de pasos (limpieza, encoding, escalado, modelo) que se ejecutan siempre en el mismo orden.
 
-**Por qué importa:** hace tu trabajo reproducible y ayuda a evitar data leakage, porque cada transformación se aprende solo con los datos de entrenamiento.
+**Por qué importa:** hace tu trabajo reproducible y ayuda a evitar data leakage, porque cada transformación se aprende solo con los datos de entrenamiento. En scikit-learn se construyen con [`Pipeline`](https://scikit-learn.org/stable/modules/compose.html).
 
 ### Hiperparámetros
 
 **Qué es:** configuraciones del modelo que tú eliges antes de entrenar, no que el modelo aprende. Por ejemplo, la profundidad máxima de un árbol.
 
-**Por qué importa:** cambiarlos puede llevar a un modelo de underfitting a overfitting. Se ajustan usando validación cruzada.
+**Por qué importa:** cambiarlos puede llevar a un modelo de underfitting a overfitting. Se ajustan usando validación cruzada, por ejemplo con [búsqueda en malla (grid search)](https://scikit-learn.org/stable/modules/grid_search.html).
 
 ## Parte 6. Más allá de la precisión
 
 ### Interpretabilidad y explicabilidad
 
-**Qué es:** la capacidad de entender por qué un modelo tomó una decisión. Herramientas como **SHAP** muestran cuánto aportó cada variable a cada predicción.
+**Qué es:** la capacidad de entender por qué un modelo tomó una decisión. Herramientas como **[SHAP](https://shap.readthedocs.io/en/latest/)** muestran cuánto aportó cada variable a cada predicción.
 
 **Por qué importa:** si un modelo niega un crédito, la persona y el regulador merecen saber por qué. Un modelo preciso que nadie puede explicar es difícil de auditar y de confiar.
 
@@ -439,7 +446,7 @@ Mejorar uno suele empeorar el otro. A eso se le llama el **trade-off sesgo-varia
 
 ## Todo junto en Python
 
-Este ejemplo usa casi todos los conceptos anteriores con un dataset público que viene incluido en scikit-learn: datos de tumores de mama, donde el objetivo es clasificar si son malignos o benignos.
+Este ejemplo usa casi todos los conceptos anteriores con un [dataset público](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html) que viene incluido en [scikit-learn](https://scikit-learn.org/stable/): datos de tumores de mama, donde el objetivo es clasificar si son malignos o benignos.
 
 ```{python}
 from sklearn.datasets import load_breast_cancer
@@ -493,16 +500,34 @@ plt.show()
 
 Lo que acabas de ver, en palabras: cargamos un **dataset**, separamos **features** y **target**, dividimos en **train y test**, armamos un **pipeline** con **escalado** y un modelo de **clasificación**, revisamos la **estabilidad** con **validación cruzada** y al final medimos con **métricas** sobre datos que el modelo nunca vio.
 
+## Recursos para seguir aprendiendo
+
+Si quieres profundizar, estas son las fuentes oficiales y gratuitas que más uso:
+
+| Recurso | Para qué sirve |
+|---|---|
+| [Python](https://www.python.org/) | El lenguaje base de todo lo que ves en este blog |
+| [10 minutos con pandas](https://pandas.pydata.org/docs/user_guide/10min.html) | Introducción oficial a [pandas](https://pandas.pydata.org/), la librería para manipular tablas |
+| [NumPy](https://numpy.org/) | Cálculo numérico con arreglos; pandas y scikit-learn se apoyan en ella |
+| [scikit-learn](https://scikit-learn.org/stable/) | Modelos clásicos de Machine Learning, métricas y preprocesamiento |
+| [Matplotlib](https://matplotlib.org/) y [seaborn](https://seaborn.pydata.org/) | Visualización de datos |
+| [Jupyter](https://jupyter.org/) | Notebooks para escribir código, gráficos y texto en un mismo lugar |
+| [Google Colab](https://colab.research.google.com/) | Notebooks gratis en el navegador, sin instalar nada |
+| [Kaggle Learn](https://www.kaggle.com/learn) | Cursos cortos y gratuitos con datasets reales para practicar |
+
 ## Preguntas frecuentes
 
 **¿Necesito saber mucha matemática para empezar en Machine Learning?**
 No para empezar. Con estadística básica y Python puedes avanzar bastante. La matemática se vuelve importante cuando quieres entender por qué los modelos se comportan como lo hacen, y la puedes ir aprendiendo en el camino.
 
-**¿Qué lenguaje debo aprender primero?**
-Python. Tiene las librerías más usadas (pandas, scikit-learn, PyTorch) y la comunidad más grande. SQL es el segundo idioma que te recomiendo.
+**¿Qué lenguaje debo aprender primero para análisis de datos y Machine Learning?**
+Python. Tiene las librerías más usadas ([pandas](https://pandas.pydata.org/), [scikit-learn](https://scikit-learn.org/stable/), [PyTorch](https://pytorch.org/)) y la comunidad más grande. SQL es el segundo idioma que te recomiendo.
 
 **¿Cuál es la diferencia entre un analista de datos y un ingeniero de Machine Learning?**
 El analista responde preguntas con datos y comunica hallazgos. El ingeniero de Machine Learning construye, evalúa y pone en producción modelos que hacen predicciones de forma automática. Comparten muchas bases.
+
+**¿Qué es el overfitting en Machine Learning?**
+Es cuando un modelo memoriza los datos de entrenamiento, incluido el ruido, y por eso funciona muy bien con ellos pero mal con datos nuevos. Lo explico con un gráfico en la sección de [overfitting y underfitting](#overfitting-y-underfitting).
 
 **¿Por dónde empiezo?**
 Por el análisis exploratorio. Aprender a mirar un dataset con criterio es la habilidad que más vas a usar, sin importar el rol.
@@ -511,4 +536,4 @@ Por el análisis exploratorio. Aprender a mirar un dataset con criterio es la ha
 
 Cada uno de estos conceptos merece su propio post, con datos reales y código paso a paso. El siguiente será sobre **análisis exploratorio de datos**: cómo hacer el primer contacto con un dataset sin perderte.
 
-Si algún término de esta guía te quedó confuso o falta alguno que te gustaría ver, escríbeme. Este glosario va a ir creciendo.
+Si algún término de esta guía te quedó confuso o falta alguno que te gustaría ver, [escríbeme](../../about.qmd). Este glosario va a ir creciendo.
