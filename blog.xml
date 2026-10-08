@@ -10,7 +10,633 @@
 <atom:link href="https://robinsonmirandaco.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Tutoriales de Machine Learning con Python, del análisis exploratorio a los modelos.</description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Sat, 19 Sep 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 08 Oct 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Conceptos fundamentales de análisis de datos y Machine Learning: guía para empezar desde cero</title>
+  <dc:creator>Robinson Miranda</dc:creator>
+  <link>https://robinsonmirandaco.github.io/posts/conceptos-basicos-analisis-de-datos-machine-learning/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<p>Cuando empiezas en datos te encuentras con un muro de palabras: <em>feature</em>, <em>target</em>, <em>overfitting</em>, <em>train/test</em>, <em>validación cruzada</em>. Cada tutorial las usa como si ya las conocieras.</p>
+<p>Este post es el que me habría gustado leer al principio. Es un mapa de los conceptos fundamentales, explicados en lenguaje simple y en el orden en que los vas a necesitar. Puedes leerlo de corrido o usarlo como glosario y volver cuando un término te frene.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Cómo leer este post
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Cada concepto tiene tres partes: <strong>qué es</strong>, <strong>un ejemplo</strong> y <strong>por qué importa</strong>. Al final hay un ejemplo completo en Python que junta casi todo.</p>
+</div>
+</div>
+<section id="parte-1.-los-datos" class="level2">
+<h2 class="anchored" data-anchor-id="parte-1.-los-datos">Parte 1. Los datos</h2>
+<section id="qué-es-un-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="qué-es-un-dataset">¿Qué es un dataset?</h3>
+<p><strong>Qué es:</strong> un conjunto de datos organizado, casi siempre en forma de tabla. Cada fila es un caso (una persona, una venta, una transacción) y cada columna es una característica de ese caso.</p>
+<p><strong>Ejemplo:</strong> una tabla de clientes de un banco, donde cada fila es un cliente y las columnas son edad, ingresos, ciudad y si pagó o no su crédito.</p>
+<p><strong>Por qué importa:</strong> casi todo en análisis de datos y Machine Learning empieza con una tabla así. Entender qué representa cada fila es la primera pregunta que debes hacerte.</p>
+</section>
+<section id="observación-y-variable" class="level3">
+<h3 class="anchored" data-anchor-id="observación-y-variable">Observación y variable</h3>
+<ul>
+<li><strong>Observación (fila, registro, muestra):</strong> cada caso individual del dataset.</li>
+<li><strong>Variable (columna, atributo):</strong> cada característica que mides de esos casos.</li>
+</ul>
+<p>Si tienes 1.000 clientes y 8 columnas, tienes 1.000 observaciones y 8 variables.</p>
+</section>
+<section id="tipos-de-variables" class="level3">
+<h3 class="anchored" data-anchor-id="tipos-de-variables">Tipos de variables</h3>
+<p><strong>Qué es:</strong> no todas las columnas son iguales, y el tipo decide qué puedes hacer con ellas.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo</th>
+<th>Qué representa</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Numérica continua</td>
+<td>Una medida que puede tomar cualquier valor</td>
+<td>Ingresos, temperatura, peso</td>
+</tr>
+<tr class="even">
+<td>Numérica discreta</td>
+<td>Un conteo</td>
+<td>Número de hijos, compras al mes</td>
+</tr>
+<tr class="odd">
+<td>Categórica nominal</td>
+<td>Grupos sin orden</td>
+<td>Ciudad, color, tipo de producto</td>
+</tr>
+<tr class="even">
+<td>Categórica ordinal</td>
+<td>Grupos con un orden</td>
+<td>Nivel educativo, talla S/M/L</td>
+</tr>
+<tr class="odd">
+<td>Fecha y hora</td>
+<td>Un momento en el tiempo</td>
+<td>Fecha de compra</td>
+</tr>
+<tr class="even">
+<td>Texto</td>
+<td>Lenguaje libre</td>
+<td>Comentarios de clientes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Por qué importa:</strong> no puedes sacar el promedio de una ciudad, y un modelo no entiende la palabra “Medellín” a menos que la conviertas en números. Saber el tipo de cada variable evita errores silenciosos.</p>
+</section>
+<section id="datos-estructurados-y-no-estructurados" class="level3">
+<h3 class="anchored" data-anchor-id="datos-estructurados-y-no-estructurados">Datos estructurados y no estructurados</h3>
+<ul>
+<li><strong>Estructurados:</strong> datos en tablas con columnas definidas (una hoja de cálculo, una base de datos SQL).</li>
+<li><strong>No estructurados:</strong> texto, imágenes, audio, video. No vienen en filas y columnas.</li>
+</ul>
+<p>Este blog empieza por los estructurados, que es donde vive la mayoría del trabajo en empresas.</p>
+</section>
+</section>
+<section id="parte-2.-análisis-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="parte-2.-análisis-de-datos">Parte 2. Análisis de datos</h2>
+<section id="qué-es-el-análisis-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="qué-es-el-análisis-de-datos">¿Qué es el análisis de datos?</h3>
+<p><strong>Qué es:</strong> el proceso de inspeccionar, limpiar, transformar y resumir datos para responder preguntas y tomar decisiones.</p>
+<p><strong>Ejemplo:</strong> “¿En qué meses vendemos más?” o “¿Qué clientes tienen más probabilidad de dejar de comprar?”.</p>
+<p><strong>Por qué importa:</strong> antes de cualquier modelo de Machine Learning hay un análisis. Muchas preguntas de negocio se responden con un buen análisis, sin necesidad de un modelo.</p>
+</section>
+<section id="análisis-exploratorio-de-datos-eda" class="level3">
+<h3 class="anchored" data-anchor-id="análisis-exploratorio-de-datos-eda">Análisis exploratorio de datos (EDA)</h3>
+<p><strong>Qué es:</strong> el primer contacto serio con un dataset. Revisas su tamaño, tipos de variables, valores faltantes, distribuciones y relaciones entre columnas.</p>
+<p><strong>Por qué importa:</strong> es donde descubres los problemas antes de que te exploten en la cara. Un modelo entrenado sobre datos que no entiendes es una caja negra encima de otra caja negra.</p>
+</section>
+<section id="estadística-descriptiva" class="level3">
+<h3 class="anchored" data-anchor-id="estadística-descriptiva">Estadística descriptiva</h3>
+<p>Son los números que resumen una variable:</p>
+<ul>
+<li><strong>Media (promedio):</strong> la suma de los valores dividida entre la cantidad. Sensible a valores extremos.</li>
+<li><strong>Mediana:</strong> el valor del medio cuando ordenas los datos. Más robusta ante extremos.</li>
+<li><strong>Moda:</strong> el valor que más se repite.</li>
+<li><strong>Desviación estándar:</strong> qué tan dispersos están los valores alrededor de la media.</li>
+<li><strong>Percentiles y cuartiles:</strong> el percentil 90 es el valor por debajo del cual está el 90% de los datos.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Media vs.&nbsp;mediana en la vida real
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si en una sala hay 9 personas que ganan 2 millones y entra alguien que gana 200 millones, la media se dispara a casi 22 millones. La mediana sigue en 2 millones. Por eso los ingresos casi siempre se reportan con la mediana.</p>
+</div>
+</div>
+</section>
+<section id="distribución" class="level3">
+<h3 class="anchored" data-anchor-id="distribución">Distribución</h3>
+<p><strong>Qué es:</strong> la forma en que se reparten los valores de una variable. Se ve con un histograma.</p>
+<p><strong>Por qué importa:</strong> te dice si los datos están concentrados, si tienen cola larga hacia un lado (asimetría) o si hay grupos separados. Muchas técnicas asumen ciertas formas de distribución.</p>
+</section>
+<section id="valores-faltantes" class="level3">
+<h3 class="anchored" data-anchor-id="valores-faltantes">Valores faltantes</h3>
+<p><strong>Qué es:</strong> celdas vacías en tu tabla (<code>NaN</code>, <code>null</code>, <code>None</code>).</p>
+<p><strong>Por qué importa:</strong> la mayoría de modelos no aceptan valores faltantes. Además, <em>por qué</em> falta un dato a veces es información en sí misma. Puedes eliminarlos, rellenarlos (imputar) o marcarlos, pero la decisión depende del contexto.</p>
+</section>
+<section id="outliers-valores-atípicos" class="level3">
+<h3 class="anchored" data-anchor-id="outliers-valores-atípicos">Outliers (valores atípicos)</h3>
+<p><strong>Qué es:</strong> valores muy alejados del resto.</p>
+<p><strong>Por qué importa:</strong> a veces son errores (una edad de 250 años), a veces son lo más interesante del dataset (una transacción fraudulenta). Nunca los borres sin entender qué son.</p>
+</section>
+<section id="correlación" class="level3">
+<h3 class="anchored" data-anchor-id="correlación">Correlación</h3>
+<p><strong>Qué es:</strong> una medida de qué tanto se mueven juntas dos variables numéricas. Va de -1 a 1.</p>
+<ul>
+<li>Cerca de <strong>1</strong>: cuando una sube, la otra también.</li>
+<li>Cerca de <strong>-1</strong>: cuando una sube, la otra baja.</li>
+<li>Cerca de <strong>0</strong>: no hay relación lineal.</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Advertencia</span>Correlación no es causalidad
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Las ventas de helado y los ahogamientos están correlacionados. No porque el helado cause ahogamientos, sino porque ambos suben en verano. Una correlación te da una pista, nunca una conclusión.</p>
+</div>
+</div>
+</section>
+<section id="limpieza-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="limpieza-de-datos">Limpieza de datos</h3>
+<p><strong>Qué es:</strong> corregir o eliminar lo que está mal: duplicados, formatos inconsistentes (“Bogotá”, “bogota”, “BOGOTA”), tipos incorrectos, valores imposibles.</p>
+<p><strong>Por qué importa:</strong> la regla clásica es <em>garbage in, garbage out</em>. Si entra basura, sale basura, sin importar qué tan sofisticado sea el modelo.</p>
+</section>
+<section id="visualización-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="visualización-de-datos">Visualización de datos</h3>
+<p><strong>Qué es:</strong> representar los datos en gráficos para entenderlos o comunicarlos. Los básicos:</p>
+<ul>
+<li><strong>Histograma:</strong> distribución de una variable numérica.</li>
+<li><strong>Diagrama de caja (boxplot):</strong> mediana, cuartiles y outliers.</li>
+<li><strong>Diagrama de dispersión (scatter):</strong> relación entre dos variables numéricas.</li>
+<li><strong>Gráfico de barras:</strong> comparar categorías.</li>
+<li><strong>Gráfico de líneas:</strong> evolución en el tiempo.</li>
+</ul>
+</section>
+</section>
+<section id="parte-3.-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="parte-3.-machine-learning">Parte 3. Machine Learning</h2>
+<section id="qué-es-machine-learning" class="level3">
+<h3 class="anchored" data-anchor-id="qué-es-machine-learning">¿Qué es Machine Learning?</h3>
+<p><strong>Qué es:</strong> una rama de la inteligencia artificial donde, en lugar de programar reglas a mano, le das ejemplos a un algoritmo y él aprende los patrones por sí mismo.</p>
+<p><strong>Ejemplo:</strong> en vez de escribir reglas para detectar spam (“si dice <em>gratis</em> y tiene más de 3 enlaces…”), le das miles de correos marcados como spam o no spam y el modelo aprende a distinguirlos.</p>
+<p><strong>Por qué importa:</strong> permite resolver problemas donde las reglas son demasiadas o demasiado sutiles para escribirlas a mano.</p>
+</section>
+<section id="inteligencia-artificial-machine-learning-y-deep-learning" class="level3">
+<h3 class="anchored" data-anchor-id="inteligencia-artificial-machine-learning-y-deep-learning">Inteligencia artificial, Machine Learning y Deep Learning</h3>
+<p>Son círculos uno dentro del otro:</p>
+<ul>
+<li><strong>Inteligencia artificial (IA):</strong> el campo general de hacer que las máquinas realicen tareas que asociamos con inteligencia.</li>
+<li><strong>Machine Learning (ML):</strong> la parte de la IA que aprende a partir de datos.</li>
+<li><strong>Deep Learning:</strong> la parte del ML que usa redes neuronales con muchas capas. Es lo que está detrás del reconocimiento de imágenes y de los modelos de lenguaje como los chatbots.</li>
+</ul>
+</section>
+<section id="modelo" class="level3">
+<h3 class="anchored" data-anchor-id="modelo">Modelo</h3>
+<p><strong>Qué es:</strong> el resultado de entrenar un algoritmo con datos. Es una función que recibe información de entrada y devuelve una predicción.</p>
+<p><strong>Ejemplo:</strong> un modelo que recibe metros cuadrados, barrio y número de habitaciones, y devuelve un precio estimado de la vivienda.</p>
+</section>
+<section id="features-y-target" class="level3">
+<h3 class="anchored" data-anchor-id="features-y-target">Features y target</h3>
+<ul>
+<li><strong>Features (variables predictoras, X):</strong> la información que el modelo usa para predecir.</li>
+<li><strong>Target (variable objetivo, y):</strong> lo que quieres predecir.</li>
+</ul>
+<p>En el ejemplo de la vivienda, los metros cuadrados y el barrio son <em>features</em>. El precio es el <em>target</em>.</p>
+</section>
+<section id="entrenamiento" class="level3">
+<h3 class="anchored" data-anchor-id="entrenamiento">Entrenamiento</h3>
+<p><strong>Qué es:</strong> el proceso en el que el algoritmo ajusta sus parámetros internos mirando ejemplos, para que sus predicciones se parezcan lo más posible a las respuestas reales. En Python suele ser una sola línea: <code>modelo.fit(X, y)</code>.</p>
+</section>
+<section id="tipos-de-aprendizaje" class="level3">
+<h3 class="anchored" data-anchor-id="tipos-de-aprendizaje">Tipos de aprendizaje</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo</th>
+<th>Idea</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Supervisado</strong></td>
+<td>Aprende de ejemplos con la respuesta correcta</td>
+<td>Predecir si un cliente pagará su crédito</td>
+</tr>
+<tr class="even">
+<td><strong>No supervisado</strong></td>
+<td>Busca patrones sin respuestas previas</td>
+<td>Agrupar clientes con hábitos parecidos</td>
+</tr>
+<tr class="odd">
+<td><strong>Por refuerzo</strong></td>
+<td>Aprende por prueba y error, con premios y castigos</td>
+<td>Un agente que aprende a jugar un videojuego</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="clasificación-y-regresión" class="level3">
+<h3 class="anchored" data-anchor-id="clasificación-y-regresión">Clasificación y regresión</h3>
+<p>Son los dos grandes tipos de problemas supervisados:</p>
+<ul>
+<li><strong>Clasificación:</strong> el target es una categoría. ¿Spam o no spam? ¿Fraude o no fraude?</li>
+<li><strong>Regresión:</strong> el target es un número. ¿Cuánto costará esta casa? ¿Cuántas unidades venderemos?</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ojo con el nombre
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La <em>regresión logística</em>, a pesar del nombre, se usa para <strong>clasificación</strong>. Es una de esas trampas de vocabulario que confunden a todos al principio.</p>
+</div>
+</div>
+</section>
+<section id="clustering-agrupamiento" class="level3">
+<h3 class="anchored" data-anchor-id="clustering-agrupamiento">Clustering (agrupamiento)</h3>
+<p><strong>Qué es:</strong> una técnica no supervisada que agrupa observaciones parecidas sin saber de antemano a qué grupo pertenecen.</p>
+<p><strong>Ejemplo:</strong> segmentar clientes en grupos según su comportamiento de compra para diseñar campañas diferentes.</p>
+</section>
+<section id="algoritmos-comunes-para-empezar" class="level3">
+<h3 class="anchored" data-anchor-id="algoritmos-comunes-para-empezar">Algoritmos comunes para empezar</h3>
+<ul>
+<li><strong>Regresión lineal:</strong> traza la línea que mejor se ajusta a los datos. Base de la regresión.</li>
+<li><strong>Regresión logística:</strong> estima la probabilidad de que algo pertenezca a una clase.</li>
+<li><strong>Árbol de decisión:</strong> una secuencia de preguntas sí/no. Fácil de interpretar.</li>
+<li><strong>Random Forest:</strong> muchos árboles que votan. Más preciso y estable que uno solo.</li>
+<li><strong>Gradient Boosting (XGBoost, LightGBM):</strong> árboles que se corrigen unos a otros. Muy fuertes en datos tabulares.</li>
+<li><strong>K-Means:</strong> el algoritmo de clustering más conocido.</li>
+<li><strong>Redes neuronales:</strong> capas de operaciones que aprenden patrones complejos.</li>
+</ul>
+</section>
+</section>
+<section id="parte-4.-evaluar-un-modelo" class="level2">
+<h2 class="anchored" data-anchor-id="parte-4.-evaluar-un-modelo">Parte 4. Evaluar un modelo</h2>
+<section id="train-validation-y-test" class="level3">
+<h3 class="anchored" data-anchor-id="train-validation-y-test">Train, validation y test</h3>
+<p><strong>Qué es:</strong> dividir los datos en partes con funciones distintas.</p>
+<ul>
+<li><strong>Entrenamiento (train):</strong> el modelo aprende de aquí.</li>
+<li><strong>Validación:</strong> se usa para ajustar y comparar modelos.</li>
+<li><strong>Prueba (test):</strong> se usa una sola vez, al final, para medir el rendimiento real.</li>
+</ul>
+<p><strong>Por qué importa:</strong> si evalúas un modelo con los mismos datos con los que aprendió, es como darle a un estudiante el examen con las respuestas. Va a sacar 5, pero no aprendió nada.</p>
+</section>
+<section id="overfitting-y-underfitting" class="level3">
+<h3 class="anchored" data-anchor-id="overfitting-y-underfitting">Overfitting y underfitting</h3>
+<ul>
+<li><strong>Overfitting (sobreajuste):</strong> el modelo memorizó los datos de entrenamiento, incluido el ruido. Le va excelente en train y mal con datos nuevos.</li>
+<li><strong>Underfitting (subajuste):</strong> el modelo es demasiado simple y no capta ni siquiera los patrones básicos. Le va mal en todo.</li>
+</ul>
+<p>El objetivo es el punto medio: un modelo que <strong>generaliza</strong>, es decir, que funciona bien con datos que nunca vio.</p>
+</section>
+<section id="validación-cruzada" class="level3">
+<h3 class="anchored" data-anchor-id="validación-cruzada">Validación cruzada</h3>
+<p><strong>Qué es:</strong> en lugar de una sola división train/test, divides los datos en <em>k</em> partes (por ejemplo 5), entrenas 5 veces dejando una parte distinta para evaluar cada vez, y promedias los resultados.</p>
+<p><strong>Por qué importa:</strong> te da una estimación más confiable y te muestra si el rendimiento es <strong>estable</strong> o si depende de la suerte de cómo partiste los datos.</p>
+</section>
+<section id="métricas-de-clasificación" class="level3">
+<h3 class="anchored" data-anchor-id="métricas-de-clasificación">Métricas de clasificación</h3>
+<ul>
+<li><strong>Accuracy (exactitud):</strong> porcentaje de predicciones correctas. Engañosa cuando las clases están desbalanceadas.</li>
+<li><strong>Precision:</strong> de lo que el modelo marcó como positivo, cuánto era realmente positivo.</li>
+<li><strong>Recall (sensibilidad):</strong> de todos los positivos reales, cuántos encontró el modelo.</li>
+<li><strong>F1-score:</strong> balance entre precision y recall.</li>
+<li><strong>Matriz de confusión:</strong> tabla con aciertos y errores por clase.</li>
+<li><strong>ROC-AUC:</strong> qué tan bien separa el modelo las clases en todos los umbrales posibles. 0,5 es azar, 1 es perfecto.</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Advertencia</span>La trampa del 99% de accuracy
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si solo el 1% de las transacciones son fraude, un modelo que siempre dice “no es fraude” tiene 99% de accuracy y no sirve para nada. Por eso en problemas desbalanceados se miran precision, recall y PR-AUC.</p>
+</div>
+</div>
+</section>
+<section id="métricas-de-regresión" class="level3">
+<h3 class="anchored" data-anchor-id="métricas-de-regresión">Métricas de regresión</h3>
+<ul>
+<li><strong>MAE (error absoluto medio):</strong> en promedio, por cuánto se equivoca el modelo. Fácil de explicar.</li>
+<li><strong>RMSE (raíz del error cuadrático medio):</strong> parecido, pero castiga más los errores grandes.</li>
+<li><strong>R² (coeficiente de determinación):</strong> qué proporción de la variación del target explica el modelo.</li>
+</ul>
+</section>
+<section id="sesgo-y-varianza" class="level3">
+<h3 class="anchored" data-anchor-id="sesgo-y-varianza">Sesgo y varianza</h3>
+<ul>
+<li><strong>Sesgo:</strong> error por suposiciones demasiado simples (lleva al underfitting).</li>
+<li><strong>Varianza:</strong> error por ser demasiado sensible a los datos de entrenamiento (lleva al overfitting).</li>
+</ul>
+<p>Mejorar uno suele empeorar el otro. A eso se le llama el <strong>trade-off sesgo-varianza</strong>.</p>
+</section>
+<section id="data-leakage-fuga-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="data-leakage-fuga-de-datos">Data leakage (fuga de datos)</h3>
+<p><strong>Qué es:</strong> cuando información que no tendrías en el momento real de la predicción se cuela en el entrenamiento.</p>
+<p><strong>Ejemplo:</strong> predecir si un cliente abandonará el servicio usando una columna “fecha de cancelación”. El modelo parece perfecto, pero en la vida real esa columna no existe hasta que el cliente ya se fue.</p>
+<p><strong>Por qué importa:</strong> es una de las causas más comunes de modelos que brillan en el notebook y fracasan en producción.</p>
+</section>
+</section>
+<section id="parte-5.-preparar-los-datos-para-un-modelo" class="level2">
+<h2 class="anchored" data-anchor-id="parte-5.-preparar-los-datos-para-un-modelo">Parte 5. Preparar los datos para un modelo</h2>
+<section id="feature-engineering" class="level3">
+<h3 class="anchored" data-anchor-id="feature-engineering">Feature engineering</h3>
+<p><strong>Qué es:</strong> crear o transformar variables para que el modelo aprenda mejor.</p>
+<p><strong>Ejemplo:</strong> a partir de “fecha de compra” crear “día de la semana” o “días desde la última compra”.</p>
+</section>
+<section id="encoding-de-variables-categóricas" class="level3">
+<h3 class="anchored" data-anchor-id="encoding-de-variables-categóricas">Encoding de variables categóricas</h3>
+<p><strong>Qué es:</strong> convertir texto en números. La técnica más común es <strong>one-hot encoding</strong>: la columna “ciudad” se convierte en varias columnas (ciudad_Medellín, ciudad_Bogotá…) con 1 o 0.</p>
+</section>
+<section id="escalado-y-normalización" class="level3">
+<h3 class="anchored" data-anchor-id="escalado-y-normalización">Escalado y normalización</h3>
+<p><strong>Qué es:</strong> poner las variables numéricas en rangos comparables. Si una columna va de 0 a 1 y otra de 0 a 10 millones, algunos algoritmos le darán más peso a la segunda solo por su tamaño.</p>
+</section>
+<section id="pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="pipeline">Pipeline</h3>
+<p><strong>Qué es:</strong> una cadena de pasos (limpieza, encoding, escalado, modelo) que se ejecutan siempre en el mismo orden.</p>
+<p><strong>Por qué importa:</strong> hace tu trabajo reproducible y ayuda a evitar data leakage, porque cada transformación se aprende solo con los datos de entrenamiento.</p>
+</section>
+<section id="hiperparámetros" class="level3">
+<h3 class="anchored" data-anchor-id="hiperparámetros">Hiperparámetros</h3>
+<p><strong>Qué es:</strong> configuraciones del modelo que tú eliges antes de entrenar, no que el modelo aprende. Por ejemplo, la profundidad máxima de un árbol.</p>
+<p><strong>Por qué importa:</strong> cambiarlos puede llevar a un modelo de underfitting a overfitting. Se ajustan usando validación cruzada.</p>
+</section>
+</section>
+<section id="parte-6.-más-allá-de-la-precisión" class="level2">
+<h2 class="anchored" data-anchor-id="parte-6.-más-allá-de-la-precisión">Parte 6. Más allá de la precisión</h2>
+<section id="interpretabilidad-y-explicabilidad" class="level3">
+<h3 class="anchored" data-anchor-id="interpretabilidad-y-explicabilidad">Interpretabilidad y explicabilidad</h3>
+<p><strong>Qué es:</strong> la capacidad de entender por qué un modelo tomó una decisión. Herramientas como <strong>SHAP</strong> muestran cuánto aportó cada variable a cada predicción.</p>
+<p><strong>Por qué importa:</strong> si un modelo niega un crédito, la persona y el regulador merecen saber por qué. Un modelo preciso que nadie puede explicar es difícil de auditar y de confiar.</p>
+</section>
+<section id="sesgo-algorítmico" class="level3">
+<h3 class="anchored" data-anchor-id="sesgo-algorítmico">Sesgo algorítmico</h3>
+<p><strong>Qué es:</strong> cuando un modelo trata de forma injusta a ciertos grupos porque aprendió patrones injustos que ya estaban en los datos históricos.</p>
+<p><strong>Por qué importa:</strong> un modelo no es neutral por ser matemático. Hereda lo que hay en sus datos.</p>
+</section>
+<section id="data-drift-cambio-en-los-datos" class="level3">
+<h3 class="anchored" data-anchor-id="data-drift-cambio-en-los-datos">Data drift (cambio en los datos)</h3>
+<p><strong>Qué es:</strong> cuando los datos del mundo real cambian con el tiempo y dejan de parecerse a los datos con los que entrenaste.</p>
+<p><strong>Ejemplo:</strong> un modelo de crédito entrenado antes de la pandemia que empieza a fallar después de ella, porque el comportamiento de pago cambió.</p>
+<p><strong>Por qué importa:</strong> un modelo no se entrena una vez y ya. Hay que monitorearlo.</p>
+</section>
+</section>
+<section id="todo-junto-en-python" class="level2">
+<h2 class="anchored" data-anchor-id="todo-junto-en-python">Todo junto en Python</h2>
+<p>Este ejemplo usa casi todos los conceptos anteriores con un dataset público que viene incluido en scikit-learn: datos de tumores de mama, donde el objetivo es clasificar si son malignos o benignos.</p>
+<div id="97d6068c" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.datasets <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> load_breast_cancer</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.model_selection <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> train_test_split, cross_val_score</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.pipeline <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> make_pipeline</span>
+<span id="cb1-4"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.preprocessing <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> StandardScaler</span>
+<span id="cb1-5"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.linear_model <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> LogisticRegression</span>
+<span id="cb1-6"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.metrics <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> classification_report, roc_auc_score</span>
+<span id="cb1-7"></span>
+<span id="cb1-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 1. Dataset: features (X) y target (y)</span></span>
+<span id="cb1-9">datos <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> load_breast_cancer(as_frame<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span>
+<span id="cb1-10">X, y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> datos.data, datos.target</span>
+<span id="cb1-11"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Observaciones: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>X<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> | Variables: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>X<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb1-12"></span>
+<span id="cb1-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 2. Separar train y test (el test no se toca hasta el final)</span></span>
+<span id="cb1-14">X_train, X_test, y_train, y_test <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> train_test_split(</span>
+<span id="cb1-15">    X, y, test_size<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.2</span>, stratify<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>y, random_state<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">42</span></span>
+<span id="cb1-16">)</span>
+<span id="cb1-17"></span>
+<span id="cb1-18"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 3. Pipeline: escalado + modelo de clasificación</span></span>
+<span id="cb1-19">modelo <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> make_pipeline(StandardScaler(), LogisticRegression(max_iter<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1000</span>))</span>
+<span id="cb1-20"></span>
+<span id="cb1-21"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 4. Validación cruzada sobre train: ¿el rendimiento es estable?</span></span>
+<span id="cb1-22">scores <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> cross_val_score(modelo, X_train, y_train, cv<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, scoring<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"roc_auc"</span>)</span>
+<span id="cb1-23"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"ROC-AUC en validación cruzada: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>scores<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>mean()<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.3f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> ± </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>scores<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>std()<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.3f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb1-24"></span>
+<span id="cb1-25"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 5. Entrenamiento final y evaluación con datos nunca vistos</span></span>
+<span id="cb1-26">modelo.fit(X_train, y_train)</span>
+<span id="cb1-27">predicciones <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> modelo.predict(X_test)</span>
+<span id="cb1-28">probabilidades <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> modelo.predict_proba(X_test)[:, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span>
+<span id="cb1-29"></span>
+<span id="cb1-30"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"ROC-AUC en test: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>roc_auc_score(y_test, probabilidades)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.3f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb1-31"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(classification_report(y_test, predicciones, target_names<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>datos.target_names))</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Observaciones: 569 | Variables: 30
+ROC-AUC en validación cruzada: 0.993 ± 0.011
+ROC-AUC en test: 0.995
+              precision    recall  f1-score   support
+
+   malignant       0.98      0.98      0.98        42
+      benign       0.99      0.99      0.99        72
+
+    accuracy                           0.98       114
+   macro avg       0.98      0.98      0.98       114
+weighted avg       0.98      0.98      0.98       114
+</code></pre>
+</div>
+</div>
+<p>Lo que acabas de ver, en palabras: cargamos un <strong>dataset</strong>, separamos <strong>features</strong> y <strong>target</strong>, dividimos en <strong>train y test</strong>, armamos un <strong>pipeline</strong> con <strong>escalado</strong> y un modelo de <strong>clasificación</strong>, revisamos la <strong>estabilidad</strong> con <strong>validación cruzada</strong> y al final medimos con <strong>métricas</strong> sobre datos que el modelo nunca vio.</p>
+</section>
+<section id="preguntas-frecuentes" class="level2">
+<h2 class="anchored" data-anchor-id="preguntas-frecuentes">Preguntas frecuentes</h2>
+<p><strong>¿Necesito saber mucha matemática para empezar en Machine Learning?</strong> No para empezar. Con estadística básica y Python puedes avanzar bastante. La matemática se vuelve importante cuando quieres entender por qué los modelos se comportan como lo hacen, y la puedes ir aprendiendo en el camino.</p>
+<p><strong>¿Qué lenguaje debo aprender primero?</strong> Python. Tiene las librerías más usadas (pandas, scikit-learn, PyTorch) y la comunidad más grande. SQL es el segundo idioma que te recomiendo.</p>
+<p><strong>¿Cuál es la diferencia entre un analista de datos y un ingeniero de Machine Learning?</strong> El analista responde preguntas con datos y comunica hallazgos. El ingeniero de Machine Learning construye, evalúa y pone en producción modelos que hacen predicciones de forma automática. Comparten muchas bases.</p>
+<p><strong>¿Por dónde empiezo?</strong> Por el análisis exploratorio. Aprender a mirar un dataset con criterio es la habilidad que más vas a usar, sin importar el rol.</p>
+</section>
+<section id="lo-que-viene" class="level2">
+<h2 class="anchored" data-anchor-id="lo-que-viene">Lo que viene</h2>
+<p>Cada uno de estos conceptos merece su propio post, con datos reales y código paso a paso. El siguiente será sobre <strong>análisis exploratorio de datos</strong>: cómo hacer el primer contacto con un dataset sin perderte.</p>
+<p>Si algún término de esta guía te quedó confuso o falta alguno que te gustaría ver, escríbeme. Este glosario va a ir creciendo.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a> ]]></description>
+  <category>fundamentos</category>
+  <category>análisis de datos</category>
+  <category>machine learning</category>
+  <category>glosario</category>
+  <guid>https://robinsonmirandaco.github.io/posts/conceptos-basicos-analisis-de-datos-machine-learning/</guid>
+  <pubDate>Thu, 08 Oct 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Por qué empiezo un blog de Machine Learning</title>
   <dc:creator>Robinson Miranda</dc:creator>

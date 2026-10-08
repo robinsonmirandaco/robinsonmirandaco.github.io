@@ -2,12 +2,14 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/conceptos-basicos-analisis-de-datos-machine-learning/index.html",
       "/posts/bienvenida/index.html"
     ]
   },
   {
     "listing": "/index.html",
     "items": [
+      "/posts/conceptos-basicos-analisis-de-datos-machine-learning/index.html",
       "/posts/bienvenida/index.html"
     ]
   }
