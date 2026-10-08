@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Robinson Miranda">
-<meta name="keywords" content="qué es machine learning, conceptos básicos de machine learning, análisis de datos para principiantes, glosario de machine learning en español, aprendizaje supervisado, overfitting, validación cruzada, python, scikit-learn">
-<meta name="description" content="Qué es un dataset, una variable, un modelo, el overfitting o la validación cruzada. Una guía clara y en español con los conceptos básicos de análisis de datos y Machine Learning, con ejemplos en Python.">
+<meta name="keywords" content="qué es machine learning, conceptos básicos de machine learning, análisis de datos para principiantes, glosario de machine learning en español, aprendizaje supervisado, overfitting, validación cruzada, interpretabilidad vs explicabilidad, IA explicable, python, scikit-learn">
+<meta name="description" content="Qué es un dataset, una variable, un modelo, el overfitting, la validación cruzada o la diferencia entre interpretabilidad y explicabilidad. Una guía clara y en español con los conceptos básicos de análisis de datos y Machine Learning, con ejemplos en Python.">
 
-<title>Conceptos fundamentales de análisis de datos y Machine Learning: guía para empezar desde cero – Robinson Miranda</title>
+<title>Conceptos básicos de análisis de datos y Machine Learning: guía para empezar desde cero – Robinson Miranda</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -365,10 +365,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Conceptos fundamentales de análisis de datos y Machine Learning: guía para empezar desde cero</h1>
+      <h1 class="title">Conceptos básicos de análisis de datos y Machine Learning: guía para empezar desde cero</h1>
                   <div>
         <div class="description">
-          Qué es un dataset, una variable, un modelo, el overfitting o la validación cruzada. Una guía clara y en español con los conceptos básicos de análisis de datos y Machine Learning, con ejemplos en Python.
+          Qué es un dataset, una variable, un modelo, el overfitting, la validación cruzada o la diferencia entre interpretabilidad y explicabilidad. Una guía clara y en español con los conceptos básicos de análisis de datos y Machine Learning, con ejemplos en Python.
         </div>
       </div>
                           <div class="quarto-categories">
@@ -410,7 +410,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div>
     <div class="keywords">
       <div class="block-title">Palabras clave</div>
-      <p>qué es machine learning, conceptos básicos de machine learning, análisis de datos para principiantes, glosario de machine learning en español, aprendizaje supervisado, overfitting, validación cruzada, python, scikit-learn</p>
+      <p>qué es machine learning, conceptos básicos de machine learning, análisis de datos para principiantes, glosario de machine learning en español, aprendizaje supervisado, overfitting, validación cruzada, interpretabilidad vs explicabilidad, IA explicable, python, scikit-learn</p>
     </div>
   </div>
   
@@ -429,6 +429,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#parte-5.-preparar-los-datos-para-un-modelo" id="toc-parte-5.-preparar-los-datos-para-un-modelo" class="nav-link" data-scroll-target="#parte-5.-preparar-los-datos-para-un-modelo">Parte 5. Preparar los datos para un modelo</a></li>
   <li><a href="#parte-6.-más-allá-de-la-precisión" id="toc-parte-6.-más-allá-de-la-precisión" class="nav-link" data-scroll-target="#parte-6.-más-allá-de-la-precisión">Parte 6. Más allá de la precisión</a></li>
   <li><a href="#todo-junto-en-python" id="toc-todo-junto-en-python" class="nav-link" data-scroll-target="#todo-junto-en-python">Todo junto en Python</a></li>
+  <li><a href="#recursos-para-seguir-aprendiendo" id="toc-recursos-para-seguir-aprendiendo" class="nav-link" data-scroll-target="#recursos-para-seguir-aprendiendo">Recursos para seguir aprendiendo</a></li>
   <li><a href="#preguntas-frecuentes" id="toc-preguntas-frecuentes" class="nav-link" data-scroll-target="#preguntas-frecuentes">Preguntas frecuentes</a></li>
   <li><a href="#lo-que-viene" id="toc-lo-que-viene" class="nav-link" data-scroll-target="#lo-que-viene">Lo que viene</a></li>
   </ul>
@@ -443,7 +444,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Cuando empiezas en datos te encuentras con un muro de palabras: <em>feature</em>, <em>target</em>, <em>overfitting</em>, <em>train/test</em>, <em>validación cruzada</em>. Cada tutorial las usa como si ya las conocieras.</p>
-<p>Este post es el que me habría gustado leer al principio. Es un mapa de los conceptos fundamentales, explicados en lenguaje simple y en el orden en que los vas a necesitar. Puedes leerlo de corrido o usarlo como glosario y volver cuando un término te frene.</p>
+<p>Este post es el que me habría gustado leer al principio (si quieres saber por qué empecé este blog, te lo cuento <a href="../bienvenida/">aquí</a>). Es un mapa de los conceptos fundamentales, explicados en lenguaje simple y en el orden en que los vas a necesitar. Puedes leerlo de corrido o usarlo como glosario y volver cuando un término te frene.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -454,7 +455,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Cada concepto tiene tres partes: <strong>qué es</strong>, <strong>un ejemplo</strong> y <strong>por qué importa</strong>. Al final hay un ejemplo completo en Python que junta casi todo.</p>
+<p>Cada concepto tiene tres partes: <strong>qué es</strong>, <strong>un ejemplo</strong> y <strong>por qué importa</strong>. Al final hay un ejemplo completo en <a href="https://www.python.org/">Python</a> que junta casi todo. Puedes ejecutarlo gratis en <a href="https://colab.research.google.com/">Google Colab</a> sin instalar nada.</p>
 </div>
 </div>
 <section id="parte-1.-los-datos" class="level2">
@@ -527,7 +528,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="datos-estructurados-y-no-estructurados" class="level3">
 <h3 class="anchored" data-anchor-id="datos-estructurados-y-no-estructurados">Datos estructurados y no estructurados</h3>
 <ul>
-<li><strong>Estructurados:</strong> datos en tablas con columnas definidas (una hoja de cálculo, una base de datos SQL).</li>
+<li><strong>Estructurados:</strong> datos en tablas con columnas definidas (una hoja de cálculo, una base de datos <a href="https://es.wikipedia.org/wiki/SQL">SQL</a>).</li>
 <li><strong>No estructurados:</strong> texto, imágenes, audio, video. No vienen en filas y columnas.</li>
 </ul>
 <p>Este blog empieza por los estructurados, que es donde vive la mayoría del trabajo en empresas.</p>
@@ -569,6 +570,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Si en una sala hay 9 personas que ganan 2 millones y entra alguien que gana 200 millones, la media se dispara a casi 22 millones. La mediana sigue en 2 millones. Por eso los ingresos casi siempre se reportan con la mediana.</p>
 </div>
 </div>
+<p>Así se ve en una distribución real de ingresos, donde unos pocos valores muy altos jalan la media hacia la derecha:</p>
+<div id="217fb54d" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Ver el código del gráfico</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ingresos <span class="op">=</span> rng.lognormal(mean<span class="op">=</span><span class="fl">1.0</span>, sigma<span class="op">=</span><span class="fl">0.8</span>, size<span class="op">=</span><span class="dv">2000</span>) <span class="op">*</span> <span class="fl">1.2</span>  <span class="co"># millones</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>ax.hist(ingresos, bins<span class="op">=</span><span class="dv">60</span>, color<span class="op">=</span>TEAL, alpha<span class="op">=</span><span class="fl">0.75</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>ax.axvline(np.median(ingresos), color<span class="op">=</span>DARK, lw<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="ss">f"Mediana: </span><span class="sc">{</span>np<span class="sc">.</span>median(ingresos)<span class="sc">:.1f}</span><span class="ss"> M"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>ax.axvline(ingresos.mean(), color<span class="op">=</span>CORAL, lw<span class="op">=</span><span class="dv">2</span>, ls<span class="op">=</span><span class="st">"--"</span>, label<span class="op">=</span><span class="ss">f"Media: </span><span class="sc">{</span>ingresos<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> M"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Ingreso mensual (millones)"</span>, ylabel<span class="op">=</span><span class="st">"Número de personas"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>       title<span class="op">=</span><span class="st">"Media vs. mediana en datos asimétricos"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>ax.legend(frameon<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-3-output-1.png" alt="Histograma de ingresos con cola hacia la derecha, con la mediana marcada más a la izquierda que la media" width="771" height="436" class="figure-img"></p>
+<figcaption>En datos con cola larga, la media se aleja de la mayoría de los casos; la mediana no.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="distribución" class="level3">
 <h3 class="anchored" data-anchor-id="distribución">Distribución</h3>
@@ -578,12 +603,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="valores-faltantes" class="level3">
 <h3 class="anchored" data-anchor-id="valores-faltantes">Valores faltantes</h3>
 <p><strong>Qué es:</strong> celdas vacías en tu tabla (<code>NaN</code>, <code>null</code>, <code>None</code>).</p>
-<p><strong>Por qué importa:</strong> la mayoría de modelos no aceptan valores faltantes. Además, <em>por qué</em> falta un dato a veces es información en sí misma. Puedes eliminarlos, rellenarlos (imputar) o marcarlos, pero la decisión depende del contexto.</p>
+<p><strong>Por qué importa:</strong> la mayoría de modelos no aceptan valores faltantes. Además, <em>por qué</em> falta un dato a veces es información en sí misma. Puedes eliminarlos, rellenarlos (imputar) o marcarlos, pero la decisión depende del contexto. La <a href="https://pandas.pydata.org/docs/user_guide/missing_data.html">guía de datos faltantes de pandas</a> explica cómo detectarlos y tratarlos.</p>
 </section>
 <section id="outliers-valores-atípicos" class="level3">
 <h3 class="anchored" data-anchor-id="outliers-valores-atípicos">Outliers (valores atípicos)</h3>
 <p><strong>Qué es:</strong> valores muy alejados del resto.</p>
 <p><strong>Por qué importa:</strong> a veces son errores (una edad de 250 años), a veces son lo más interesante del dataset (una transacción fraudulenta). Nunca los borres sin entender qué son.</p>
+<p>El diagrama de caja (boxplot) es la forma más rápida de verlos: los puntos sueltos fuera de los “bigotes” son candidatos a outlier.</p>
+<div id="7ac2c829" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Ver el código del gráfico</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>montos <span class="op">=</span> np.concatenate([rng.normal(<span class="dv">120</span>, <span class="dv">30</span>, <span class="dv">300</span>), [<span class="dv">380</span>, <span class="dv">410</span>, <span class="dv">455</span>, <span class="dv">520</span>]])</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">2.6</span>))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>ax.boxplot(montos, vert<span class="op">=</span><span class="va">False</span>, widths<span class="op">=</span><span class="fl">0.5</span>, patch_artist<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>           boxprops<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">"#ccfbf1"</span>, edgecolor<span class="op">=</span>TEAL),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>           medianprops<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span>DARK, lw<span class="op">=</span><span class="dv">2</span>),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>           flierprops<span class="op">=</span><span class="bu">dict</span>(marker<span class="op">=</span><span class="st">"o"</span>, markerfacecolor<span class="op">=</span>CORAL, markeredgecolor<span class="op">=</span>CORAL))</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Monto de la transacción (USD)"</span>, yticks<span class="op">=</span>[], title<span class="op">=</span><span class="st">"Detectar outliers con un boxplot"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-4-output-1.png" alt="Diagrama de caja de montos de transacciones con varios puntos atípicos muy por encima del resto" width="704" height="317" class="figure-img"></p>
+<figcaption>Los puntos fuera de los bigotes son posibles outliers. Hay que investigarlos antes de decidir qué hacer.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="correlación" class="level3">
 <h3 class="anchored" data-anchor-id="correlación">Correlación</h3>
@@ -593,6 +641,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Cerca de <strong>-1</strong>: cuando una sube, la otra baja.</li>
 <li>Cerca de <strong>0</strong>: no hay relación lineal.</li>
 </ul>
+<div id="11c78310" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Ver el código del gráfico</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> rng.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">200</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>casos <span class="op">=</span> {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Positiva"</span>: x <span class="op">+</span> rng.normal(<span class="dv">0</span>, <span class="fl">0.4</span>, <span class="dv">200</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Negativa"</span>: <span class="op">-</span>x <span class="op">+</span> rng.normal(<span class="dv">0</span>, <span class="fl">0.4</span>, <span class="dv">200</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Sin relación"</span>: rng.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">200</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="fl">3.2</span>), sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, (nombre, y_) <span class="kw">in</span> <span class="bu">zip</span>(axes, casos.items()):</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> np.corrcoef(x, y_)[<span class="dv">0</span>, <span class="dv">1</span>]</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    ax.scatter(x, y_, s<span class="op">=</span><span class="dv">14</span>, color<span class="op">=</span>TEAL, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f"</span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss"> (r = </span><span class="sc">{</span>r<span class="sc">:.2f}</span><span class="ss">)"</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    ax.set_xticks([])<span class="op">;</span> ax.set_yticks([])</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-5-output-1.png" alt="Tres diagramas de dispersión: correlación positiva, negativa y sin correlación" width="1085" height="337" class="figure-img"></p>
+<figcaption>Tres tipos de correlación entre dos variables numéricas.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -603,7 +678,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Las ventas de helado y los ahogamientos están correlacionados. No porque el helado cause ahogamientos, sino porque ambos suben en verano. Una correlación te da una pista, nunca una conclusión.</p>
+<p>Las ventas de helado y los ahogamientos están correlacionados. No porque el helado cause ahogamientos, sino porque ambos suben en verano. Una correlación te da una pista, nunca una conclusión. A esta falacia se le conoce como <a href="https://es.wikipedia.org/wiki/Cum_hoc_ergo_propter_hoc"><em>cum hoc ergo propter hoc</em></a>.</p>
 </div>
 </div>
 </section>
@@ -614,7 +689,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="visualización-de-datos" class="level3">
 <h3 class="anchored" data-anchor-id="visualización-de-datos">Visualización de datos</h3>
-<p><strong>Qué es:</strong> representar los datos en gráficos para entenderlos o comunicarlos. Los básicos:</p>
+<p><strong>Qué es:</strong> representar los datos en gráficos para entenderlos o comunicarlos. En Python las librerías más usadas son <a href="https://matplotlib.org/">Matplotlib</a> y <a href="https://seaborn.pydata.org/">seaborn</a>. Los básicos:</p>
 <ul>
 <li><strong>Histograma:</strong> distribución de una variable numérica.</li>
 <li><strong>Diagrama de caja (boxplot):</strong> mediana, cuartiles y outliers.</li>
@@ -717,6 +792,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="clustering-agrupamiento">Clustering (agrupamiento)</h3>
 <p><strong>Qué es:</strong> una técnica no supervisada que agrupa observaciones parecidas sin saber de antemano a qué grupo pertenecen.</p>
 <p><strong>Ejemplo:</strong> segmentar clientes en grupos según su comportamiento de compra para diseñar campañas diferentes.</p>
+<div id="b4243878" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Ver el código del gráfico</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_blobs</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>Xc, _ <span class="op">=</span> make_blobs(n_samples<span class="op">=</span><span class="dv">300</span>, centers<span class="op">=</span><span class="dv">3</span>, cluster_std<span class="op">=</span><span class="fl">1.1</span>, random_state<span class="op">=</span><span class="dv">7</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>grupos <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">3</span>, n_init<span class="op">=</span><span class="dv">10</span>, random_state<span class="op">=</span><span class="dv">7</span>).fit_predict(Xc)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="fl">3.6</span>), sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].scatter(Xc[:, <span class="dv">0</span>], Xc[:, <span class="dv">1</span>], s<span class="op">=</span><span class="dv">14</span>, color<span class="op">=</span>GRAY)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">"Antes: clientes sin etiqueta"</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].scatter(Xc[:, <span class="dv">0</span>], Xc[:, <span class="dv">1</span>], s<span class="op">=</span><span class="dv">14</span>, c<span class="op">=</span>[[TEAL, CORAL, DARK][g] <span class="cf">for</span> g <span class="kw">in</span> grupos])</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">"Después: 3 grupos encontrados"</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axes:</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Frecuencia de compra"</span>, ylabel<span class="op">=</span><span class="st">"Ticket promedio"</span>, xticks<span class="op">=</span>[], yticks<span class="op">=</span>[])</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-6-output-1.png" alt="Dos diagramas de dispersión: a la izquierda clientes sin agrupar, a la derecha los mismos clientes coloreados en tres grupos" width="975" height="381" class="figure-img"></p>
+<figcaption>K-Means encuentra grupos en los datos sin que nadie le diga cuáles son.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="algoritmos-comunes-para-empezar" class="level3">
 <h3 class="anchored" data-anchor-id="algoritmos-comunes-para-empezar">Algoritmos comunes para empezar</h3>
@@ -725,9 +828,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Regresión logística:</strong> estima la probabilidad de que algo pertenezca a una clase.</li>
 <li><strong>Árbol de decisión:</strong> una secuencia de preguntas sí/no. Fácil de interpretar.</li>
 <li><strong>Random Forest:</strong> muchos árboles que votan. Más preciso y estable que uno solo.</li>
-<li><strong>Gradient Boosting (XGBoost, LightGBM):</strong> árboles que se corrigen unos a otros. Muy fuertes en datos tabulares.</li>
-<li><strong>K-Means:</strong> el algoritmo de clustering más conocido.</li>
-<li><strong>Redes neuronales:</strong> capas de operaciones que aprenden patrones complejos.</li>
+<li><strong>Gradient Boosting (<a href="https://xgboost.readthedocs.io/en/stable/">XGBoost</a>, <a href="https://lightgbm.readthedocs.io/en/stable/">LightGBM</a>):</strong> árboles que se corrigen unos a otros. Muy fuertes en datos tabulares.</li>
+<li><strong>K-Means:</strong> el <a href="https://scikit-learn.org/stable/modules/clustering.html">algoritmo de clustering</a> más conocido.</li>
+<li><strong>Redes neuronales:</strong> capas de operaciones que aprenden patrones complejos. La librería más popular para construirlas es <a href="https://pytorch.org/">PyTorch</a>.</li>
 </ul>
 </section>
 </section>
@@ -750,11 +853,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Underfitting (subajuste):</strong> el modelo es demasiado simple y no capta ni siquiera los patrones básicos. Le va mal en todo.</li>
 </ul>
 <p>El objetivo es el punto medio: un modelo que <strong>generaliza</strong>, es decir, que funciona bien con datos que nunca vio.</p>
+<div id="de4608de" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Ver el código del gráfico</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.polynomial <span class="im">import</span> Polynomial</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.sort(rng.uniform(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">20</span>))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> np.sin(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> xs) <span class="op">+</span> rng.normal(<span class="dv">0</span>, <span class="fl">0.2</span>, <span class="dv">20</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>grid <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">300</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="fl">3.2</span>), sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, grado, titulo <span class="kw">in</span> <span class="bu">zip</span>(axes, [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">15</span>],</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                             [<span class="st">"Underfitting"</span>, <span class="st">"Buen ajuste"</span>, <span class="st">"Overfitting"</span>]):</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    curva <span class="op">=</span> Polynomial.fit(xs, ys, grado)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    ax.scatter(xs, ys, s<span class="op">=</span><span class="dv">18</span>, color<span class="op">=</span>DARK, zorder<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    ax.plot(grid, curva(grid), color<span class="op">=</span>CORAL <span class="cf">if</span> grado <span class="op">!=</span> <span class="dv">4</span> <span class="cf">else</span> TEAL, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f"</span><span class="sc">{</span>titulo<span class="sc">}</span><span class="ss"> (grado </span><span class="sc">{</span>grado<span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    ax.set_ylim(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)<span class="op">;</span> ax.set_xticks([])<span class="op">;</span> ax.set_yticks([])</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-7-output-1.png" alt="Tres gráficos con los mismos puntos y curvas de ajuste: una línea recta que no capta la forma, una curva suave que sí, y una curva muy ondulada que pasa por cada punto" width="1085" height="337" class="figure-img"></p>
+<figcaption>Mismo dataset, tres modelos: demasiado simple, adecuado y demasiado complejo.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="validación-cruzada" class="level3">
 <h3 class="anchored" data-anchor-id="validación-cruzada">Validación cruzada</h3>
 <p><strong>Qué es:</strong> en lugar de una sola división train/test, divides los datos en <em>k</em> partes (por ejemplo 5), entrenas 5 veces dejando una parte distinta para evaluar cada vez, y promedias los resultados.</p>
-<p><strong>Por qué importa:</strong> te da una estimación más confiable y te muestra si el rendimiento es <strong>estable</strong> o si depende de la suerte de cómo partiste los datos.</p>
+<p><strong>Por qué importa:</strong> te da una estimación más confiable y te muestra si el rendimiento es <strong>estable</strong> o si depende de la suerte de cómo partiste los datos. La <a href="https://scikit-learn.org/stable/modules/cross_validation.html">documentación de scikit-learn sobre validación cruzada</a> lo explica con diagramas muy claros.</p>
 </section>
 <section id="métricas-de-clasificación" class="level3">
 <h3 class="anchored" data-anchor-id="métricas-de-clasificación">Métricas de clasificación</h3>
@@ -779,6 +911,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Si solo el 1% de las transacciones son fraude, un modelo que siempre dice “no es fraude” tiene 99% de accuracy y no sirve para nada. Por eso en problemas desbalanceados se miran precision, recall y PR-AUC.</p>
 </div>
 </div>
+<p>Todas estas métricas están implementadas en el <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">módulo de métricas de scikit-learn</a>.</p>
 </section>
 <section id="métricas-de-regresión" class="level3">
 <h3 class="anchored" data-anchor-id="métricas-de-regresión">Métricas de regresión</h3>
@@ -800,7 +933,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="data-leakage-fuga-de-datos">Data leakage (fuga de datos)</h3>
 <p><strong>Qué es:</strong> cuando información que no tendrías en el momento real de la predicción se cuela en el entrenamiento.</p>
 <p><strong>Ejemplo:</strong> predecir si un cliente abandonará el servicio usando una columna “fecha de cancelación”. El modelo parece perfecto, pero en la vida real esa columna no existe hasta que el cliente ya se fue.</p>
-<p><strong>Por qué importa:</strong> es una de las causas más comunes de modelos que brillan en el notebook y fracasan en producción.</p>
+<p><strong>Por qué importa:</strong> es una de las causas más comunes de modelos que brillan en el notebook y fracasan en producción. scikit-learn tiene una sección dedicada a <a href="https://scikit-learn.org/stable/common_pitfalls.html">errores comunes y buenas prácticas</a> que vale la pena leer.</p>
 </section>
 </section>
 <section id="parte-5.-preparar-los-datos-para-un-modelo" class="level2">
@@ -812,7 +945,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="encoding-de-variables-categóricas" class="level3">
 <h3 class="anchored" data-anchor-id="encoding-de-variables-categóricas">Encoding de variables categóricas</h3>
-<p><strong>Qué es:</strong> convertir texto en números. La técnica más común es <strong>one-hot encoding</strong>: la columna “ciudad” se convierte en varias columnas (ciudad_Medellín, ciudad_Bogotá…) con 1 o 0.</p>
+<p><strong>Qué es:</strong> convertir texto en números. La técnica más común es <strong><a href="https://scikit-learn.org/stable/modules/preprocessing.html">one-hot encoding</a></strong>: la columna “ciudad” se convierte en varias columnas (ciudad_Medellín, ciudad_Bogotá…) con 1 o 0.</p>
 </section>
 <section id="escalado-y-normalización" class="level3">
 <h3 class="anchored" data-anchor-id="escalado-y-normalización">Escalado y normalización</h3>
@@ -821,20 +954,138 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="pipeline" class="level3">
 <h3 class="anchored" data-anchor-id="pipeline">Pipeline</h3>
 <p><strong>Qué es:</strong> una cadena de pasos (limpieza, encoding, escalado, modelo) que se ejecutan siempre en el mismo orden.</p>
-<p><strong>Por qué importa:</strong> hace tu trabajo reproducible y ayuda a evitar data leakage, porque cada transformación se aprende solo con los datos de entrenamiento.</p>
+<p><strong>Por qué importa:</strong> hace tu trabajo reproducible y ayuda a evitar data leakage, porque cada transformación se aprende solo con los datos de entrenamiento. En scikit-learn se construyen con <a href="https://scikit-learn.org/stable/modules/compose.html"><code>Pipeline</code></a>.</p>
 </section>
 <section id="hiperparámetros" class="level3">
 <h3 class="anchored" data-anchor-id="hiperparámetros">Hiperparámetros</h3>
 <p><strong>Qué es:</strong> configuraciones del modelo que tú eliges antes de entrenar, no que el modelo aprende. Por ejemplo, la profundidad máxima de un árbol.</p>
-<p><strong>Por qué importa:</strong> cambiarlos puede llevar a un modelo de underfitting a overfitting. Se ajustan usando validación cruzada.</p>
+<p><strong>Por qué importa:</strong> cambiarlos puede llevar a un modelo de underfitting a overfitting. Se ajustan usando validación cruzada, por ejemplo con <a href="https://scikit-learn.org/stable/modules/grid_search.html">búsqueda en malla (grid search)</a>.</p>
 </section>
 </section>
 <section id="parte-6.-más-allá-de-la-precisión" class="level2">
 <h2 class="anchored" data-anchor-id="parte-6.-más-allá-de-la-precisión">Parte 6. Más allá de la precisión</h2>
-<section id="interpretabilidad-y-explicabilidad" class="level3">
-<h3 class="anchored" data-anchor-id="interpretabilidad-y-explicabilidad">Interpretabilidad y explicabilidad</h3>
-<p><strong>Qué es:</strong> la capacidad de entender por qué un modelo tomó una decisión. Herramientas como <strong>SHAP</strong> muestran cuánto aportó cada variable a cada predicción.</p>
-<p><strong>Por qué importa:</strong> si un modelo niega un crédito, la persona y el regulador merecen saber por qué. Un modelo preciso que nadie puede explicar es difícil de auditar y de confiar.</p>
+<p>Muchos usan estas dos palabras como sinónimos, pero <strong>no son lo mismo</strong>, y confundirlas lleva a malas decisiones. La diferencia está en <em>de dónde sale el entendimiento</em>: del modelo mismo o de una herramienta externa que intenta describirlo.</p>
+<section id="interpretabilidad" class="level3">
+<h3 class="anchored" data-anchor-id="interpretabilidad">Interpretabilidad</h3>
+<p><strong>Qué es:</strong> la propiedad de un modelo cuyo funcionamiento interno una persona puede entender directamente, sin herramientas adicionales. Mirando el modelo ves <em>cómo</em> decide.</p>
+<p><strong>Ejemplo:</strong> en una regresión logística cada variable tiene un coeficiente. Si el coeficiente de “días de mora” es positivo y grande, sabes que más días de mora aumentan el riesgo, y sabes cuánto. Un árbol de decisión pequeño también es interpretable: puedes seguir las preguntas sí/no de principio a fin.</p>
+<p><strong>Por qué importa:</strong> la explicación <em>es</em> el modelo. No hay una capa intermedia que pueda equivocarse.</p>
+</section>
+<section id="explicabilidad" class="level3">
+<h3 class="anchored" data-anchor-id="explicabilidad">Explicabilidad</h3>
+<p><strong>Qué es:</strong> la capacidad de dar una explicación sobre las decisiones de un modelo que, por sí mismo, no se entiende (una “caja negra” como un Random Forest, XGBoost o una red neuronal). La explicación la produce <strong>otra herramienta, después de entrenar</strong> el modelo (por eso se le llama explicación <em>post-hoc</em>).</p>
+<p><strong>Ejemplo:</strong> técnicas como <a href="https://shap.readthedocs.io/en/latest/">SHAP</a>, <a href="https://github.com/marcotcr/lime">LIME</a>, la <a href="https://scikit-learn.org/stable/modules/permutation_importance.html">importancia por permutación</a> o los <a href="https://scikit-learn.org/stable/modules/partial_dependence.html">gráficos de dependencia parcial</a> miran cómo cambian las predicciones cuando cambian las entradas y, a partir de eso, estiman qué variables pesaron más.</p>
+<p><strong>Por qué importa:</strong> permite usar modelos más complejos y poderosos sin renunciar del todo a entenderlos. Pero hay que tener claro que la explicación es una <strong>aproximación</strong> del comportamiento del modelo, no el modelo.</p>
+</section>
+<section id="interpretabilidad-vs-explicabilidad" class="level3">
+<h3 class="anchored" data-anchor-id="interpretabilidad-vs-explicabilidad">Interpretabilidad vs.&nbsp;explicabilidad: por qué no son lo mismo</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Interpretabilidad</th>
+<th>Explicabilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>De dónde sale el entendimiento</td>
+<td>Del propio modelo</td>
+<td>De una herramienta externa, después de entrenar</td>
+</tr>
+<tr class="even">
+<td>Modelos típicos</td>
+<td>Regresión lineal y logística, árboles pequeños, reglas</td>
+<td>Random Forest, gradient boosting, redes neuronales</td>
+</tr>
+<tr class="odd">
+<td>Herramientas</td>
+<td>Coeficientes, reglas del árbol</td>
+<td>SHAP, LIME, importancia por permutación, dependencia parcial</td>
+</tr>
+<tr class="even">
+<td>Qué tan fiel es</td>
+<td>Exacta: describe lo que el modelo realmente hace</td>
+<td>Aproximada: puede no reflejar del todo al modelo</td>
+</tr>
+<tr class="odd">
+<td>Pregunta que responde</td>
+<td>“¿Cómo funciona el modelo?”</td>
+<td>“¿Qué influyó en este resultado?”</td>
+</tr>
+</tbody>
+</table>
+<p>Hay además dos alcances que aplican a ambas:</p>
+<ul>
+<li><strong>Global:</strong> cómo se comporta el modelo en general (qué variables importan más en todos los casos).</li>
+<li><strong>Local:</strong> por qué tomó <em>una</em> decisión concreta (por qué a <em>este</em> cliente se le negó el crédito).</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Advertencia</span>Una explicación puede ser convincente y estar equivocada
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Una explicación post-hoc puede verse muy razonable y aun así no reflejar lo que el modelo hace de verdad. Por eso la investigadora Cynthia Rudin propone, en un artículo muy citado, que en <a href="https://www.nature.com/articles/s42256-019-0048-x">decisiones de alto impacto se usen modelos interpretables en lugar de explicar cajas negras</a>. Si un modelo simple e interpretable logra un rendimiento parecido al de uno complejo, casi siempre es la mejor opción.</p>
+</div>
+</div>
+<p>Veámoslo con los mismos datos del ejemplo final. A la izquierda, un modelo <strong>interpretable</strong>: los coeficientes <em>son</em> el modelo. A la derecha, una <strong>explicación</strong> de un Random Forest calculada desde afuera, midiendo cuánto empeora el modelo cuando se desordena cada variable.</p>
+<div id="4e659fc1" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Ver el código del gráfico</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_breast_cancer</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.inspection <span class="im">import</span> permutation_importance</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>cancer <span class="op">=</span> load_breast_cancer(as_frame<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>Xa, Xb, ya, yb <span class="op">=</span> train_test_split(cancer.data, cancer.target, test_size<span class="op">=</span><span class="fl">0.25</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>                                  stratify<span class="op">=</span>cancer.target, random_state<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Interpretable: regresión logística sobre datos escalados</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>logit <span class="op">=</span> make_pipeline(StandardScaler(), LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>)).fit(Xa, ya)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>coefs <span class="op">=</span> pd.Series(logit[<span class="op">-</span><span class="dv">1</span>].coef_[<span class="dv">0</span>], index<span class="op">=</span>Xa.columns)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>coefs <span class="op">=</span> coefs.reindex(coefs.<span class="bu">abs</span>().sort_values().index)[<span class="op">-</span><span class="dv">8</span>:]</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Caja negra + explicación post-hoc: Random Forest + importancia por permutación</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>bosque <span class="op">=</span> RandomForestClassifier(n_estimators<span class="op">=</span><span class="dv">300</span>, random_state<span class="op">=</span><span class="dv">0</span>).fit(Xa, ya)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>perm <span class="op">=</span> permutation_importance(bosque, Xb, yb, n_repeats<span class="op">=</span><span class="dv">20</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>imp <span class="op">=</span> pd.Series(perm.importances_mean, index<span class="op">=</span>Xa.columns).sort_values()[<span class="op">-</span><span class="dv">8</span>:]</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">4.2</span>))</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].barh(coefs.index, coefs.values,</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span>[CORAL <span class="cf">if</span> v <span class="op">&lt;</span> <span class="dv">0</span> <span class="cf">else</span> TEAL <span class="cf">for</span> v <span class="kw">in</span> coefs.values])</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].axvline(<span class="dv">0</span>, color<span class="op">=</span>GRAY, lw<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].<span class="bu">set</span>(title<span class="op">=</span><span class="st">"Interpretable: coeficientes"</span>, xlabel<span class="op">=</span><span class="st">"Peso en el modelo (negativo = más riesgo de maligno)"</span>)</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].barh(imp.index, imp.values, color<span class="op">=</span>TEAL)</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].<span class="bu">set</span>(title<span class="op">=</span><span class="st">"Explicación post-hoc: Random Forest"</span>, xlabel<span class="op">=</span><span class="st">"Caída en accuracy al desordenar la variable"</span>)</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-8-output-1.png" alt="Dos gráficos de barras horizontales: los coeficientes de una regresión logística y la importancia por permutación de un Random Forest, para las ocho variables más relevantes de cada uno" width="1217" height="447" class="figure-img"></p>
+<figcaption>Izquierda: interpretabilidad (los coeficientes del modelo). Derecha: explicabilidad (importancia por permutación calculada después de entrenar una caja negra).</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Fíjate en que los dos modelos no destacan exactamente las mismas variables. No es un error: son preguntas distintas respondidas con herramientas distintas. Los coeficientes te dicen cómo decide la regresión logística. La importancia por permutación te dice de qué variables <em>depende</em> el Random Forest para acertar, pero no cómo las combina por dentro.</p>
+<p><strong>Por qué todo esto importa:</strong> si un modelo niega un crédito, la persona y el regulador merecen saber por qué. Y no basta con que exista <em>una</em> explicación: hay que saber si viene del modelo mismo o si es una aproximación, y evaluar qué tan confiable es. Si quieres profundizar, el libro gratuito <a href="https://christophm.github.io/interpretable-ml-book/"><em>Interpretable Machine Learning</em></a> de Christoph Molnar es la referencia más completa.</p>
 </section>
 <section id="sesgo-algorítmico" class="level3">
 <h3 class="anchored" data-anchor-id="sesgo-algorítmico">Sesgo algorítmico</h3>
@@ -850,39 +1101,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="todo-junto-en-python" class="level2">
 <h2 class="anchored" data-anchor-id="todo-junto-en-python">Todo junto en Python</h2>
-<p>Este ejemplo usa casi todos los conceptos anteriores con un dataset público que viene incluido en scikit-learn: datos de tumores de mama, donde el objetivo es clasificar si son malignos o benignos.</p>
-<div id="97d6068c" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_breast_cancer</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split, cross_val_score</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report, roc_auc_score</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Dataset: features (X) y target (y)</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>datos <span class="op">=</span> load_breast_cancer(as_frame<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> datos.data, datos.target</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Observaciones: </span><span class="sc">{</span>X<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> | Variables: </span><span class="sc">{</span>X<span class="sc">.</span>shape[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Separar train y test (el test no se toca hasta el final)</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, stratify<span class="op">=</span>y, random_state<span class="op">=</span><span class="dv">42</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Pipeline: escalado + modelo de clasificación</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>modelo <span class="op">=</span> make_pipeline(StandardScaler(), LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>))</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Validación cruzada sobre train: ¿el rendimiento es estable?</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> cross_val_score(modelo, X_train, y_train, cv<span class="op">=</span><span class="dv">5</span>, scoring<span class="op">=</span><span class="st">"roc_auc"</span>)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"ROC-AUC en validación cruzada: </span><span class="sc">{</span>scores<span class="sc">.</span>mean()<span class="sc">:.3f}</span><span class="ss"> ± </span><span class="sc">{</span>scores<span class="sc">.</span>std()<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Entrenamiento final y evaluación con datos nunca vistos</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>modelo.fit(X_train, y_train)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>predicciones <span class="op">=</span> modelo.predict(X_test)</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>probabilidades <span class="op">=</span> modelo.predict_proba(X_test)[:, <span class="dv">1</span>]</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"ROC-AUC en test: </span><span class="sc">{</span>roc_auc_score(y_test, probabilidades)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_test, predicciones, target_names<span class="op">=</span>datos.target_names))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Este ejemplo usa casi todos los conceptos anteriores con un <a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html">dataset público</a> que viene incluido en <a href="https://scikit-learn.org/stable/">scikit-learn</a>: datos de tumores de mama, donde el objetivo es clasificar si son malignos o benignos.</p>
+<div id="a026e76e" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_breast_cancer</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split, cross_val_score</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report, roc_auc_score</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Dataset: features (X) y target (y)</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>datos <span class="op">=</span> load_breast_cancer(as_frame<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> datos.data, datos.target</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Observaciones: </span><span class="sc">{</span>X<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> | Variables: </span><span class="sc">{</span>X<span class="sc">.</span>shape[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Separar train y test (el test no se toca hasta el final)</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, stratify<span class="op">=</span>y, random_state<span class="op">=</span><span class="dv">42</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Pipeline: escalado + modelo de clasificación</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>modelo <span class="op">=</span> make_pipeline(StandardScaler(), LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>))</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Validación cruzada sobre train: ¿el rendimiento es estable?</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> cross_val_score(modelo, X_train, y_train, cv<span class="op">=</span><span class="dv">5</span>, scoring<span class="op">=</span><span class="st">"roc_auc"</span>)</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"ROC-AUC en validación cruzada: </span><span class="sc">{</span>scores<span class="sc">.</span>mean()<span class="sc">:.3f}</span><span class="ss"> ± </span><span class="sc">{</span>scores<span class="sc">.</span>std()<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Entrenamiento final y evaluación con datos nunca vistos</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>modelo.fit(X_train, y_train)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>predicciones <span class="op">=</span> modelo.predict(X_test)</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>probabilidades <span class="op">=</span> modelo.predict_proba(X_test)[:, <span class="dv">1</span>]</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"ROC-AUC en test: </span><span class="sc">{</span>roc_auc_score(y_test, probabilidades)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_test, predicciones, target_names<span class="op">=</span>datos.target_names))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Observaciones: 569 | Variables: 30
 ROC-AUC en validación cruzada: 0.993 ± 0.011
@@ -898,19 +1149,87 @@ weighted avg       0.98      0.98      0.98       114
 </code></pre>
 </div>
 </div>
+<p>Y la matriz de confusión, para ver exactamente en qué se equivocó el modelo:</p>
+<div id="2f82594c" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> ConfusionMatrixDisplay</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">4.5</span>, <span class="dv">4</span>))</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>ConfusionMatrixDisplay.from_predictions(</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    y_test, predicciones, display_labels<span class="op">=</span>[<span class="st">"Maligno"</span>, <span class="st">"Benigno"</span>],</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    cmap<span class="op">=</span><span class="st">"Greens"</span>, colorbar<span class="op">=</span><span class="va">False</span>, ax<span class="op">=</span>ax,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Predicción del modelo"</span>, ylabel<span class="op">=</span><span class="st">"Valor real"</span>, title<span class="op">=</span><span class="st">"Matriz de confusión"</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-10-output-1.png" alt="Matriz de confusión de 2 por 2 con los aciertos y errores del modelo para tumores malignos y benignos" width="464" height="437" class="figure-img"></p>
+<figcaption>Matriz de confusión del modelo sobre el conjunto de prueba.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <p>Lo que acabas de ver, en palabras: cargamos un <strong>dataset</strong>, separamos <strong>features</strong> y <strong>target</strong>, dividimos en <strong>train y test</strong>, armamos un <strong>pipeline</strong> con <strong>escalado</strong> y un modelo de <strong>clasificación</strong>, revisamos la <strong>estabilidad</strong> con <strong>validación cruzada</strong> y al final medimos con <strong>métricas</strong> sobre datos que el modelo nunca vio.</p>
+</section>
+<section id="recursos-para-seguir-aprendiendo" class="level2">
+<h2 class="anchored" data-anchor-id="recursos-para-seguir-aprendiendo">Recursos para seguir aprendiendo</h2>
+<p>Si quieres profundizar, estas son las fuentes oficiales y gratuitas que más uso:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Recurso</th>
+<th>Para qué sirve</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://www.python.org/">Python</a></td>
+<td>El lenguaje base de todo lo que ves en este blog</td>
+</tr>
+<tr class="even">
+<td><a href="https://pandas.pydata.org/docs/user_guide/10min.html">10 minutos con pandas</a></td>
+<td>Introducción oficial a <a href="https://pandas.pydata.org/">pandas</a>, la librería para manipular tablas</td>
+</tr>
+<tr class="odd">
+<td><a href="https://numpy.org/">NumPy</a></td>
+<td>Cálculo numérico con arreglos; pandas y scikit-learn se apoyan en ella</td>
+</tr>
+<tr class="even">
+<td><a href="https://scikit-learn.org/stable/">scikit-learn</a></td>
+<td>Modelos clásicos de Machine Learning, métricas y preprocesamiento</td>
+</tr>
+<tr class="odd">
+<td><a href="https://matplotlib.org/">Matplotlib</a> y <a href="https://seaborn.pydata.org/">seaborn</a></td>
+<td>Visualización de datos</td>
+</tr>
+<tr class="even">
+<td><a href="https://jupyter.org/">Jupyter</a></td>
+<td>Notebooks para escribir código, gráficos y texto en un mismo lugar</td>
+</tr>
+<tr class="odd">
+<td><a href="https://colab.research.google.com/">Google Colab</a></td>
+<td>Notebooks gratis en el navegador, sin instalar nada</td>
+</tr>
+<tr class="even">
+<td><a href="https://www.kaggle.com/learn">Kaggle Learn</a></td>
+<td>Cursos cortos y gratuitos con datasets reales para practicar</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="preguntas-frecuentes" class="level2">
 <h2 class="anchored" data-anchor-id="preguntas-frecuentes">Preguntas frecuentes</h2>
 <p><strong>¿Necesito saber mucha matemática para empezar en Machine Learning?</strong> No para empezar. Con estadística básica y Python puedes avanzar bastante. La matemática se vuelve importante cuando quieres entender por qué los modelos se comportan como lo hacen, y la puedes ir aprendiendo en el camino.</p>
-<p><strong>¿Qué lenguaje debo aprender primero?</strong> Python. Tiene las librerías más usadas (pandas, scikit-learn, PyTorch) y la comunidad más grande. SQL es el segundo idioma que te recomiendo.</p>
+<p><strong>¿Qué lenguaje debo aprender primero para análisis de datos y Machine Learning?</strong> Python. Tiene las librerías más usadas (<a href="https://pandas.pydata.org/">pandas</a>, <a href="https://scikit-learn.org/stable/">scikit-learn</a>, <a href="https://pytorch.org/">PyTorch</a>) y la comunidad más grande. SQL es el segundo idioma que te recomiendo.</p>
 <p><strong>¿Cuál es la diferencia entre un analista de datos y un ingeniero de Machine Learning?</strong> El analista responde preguntas con datos y comunica hallazgos. El ingeniero de Machine Learning construye, evalúa y pone en producción modelos que hacen predicciones de forma automática. Comparten muchas bases.</p>
+<p><strong>¿Qué es el overfitting en Machine Learning?</strong> Es cuando un modelo memoriza los datos de entrenamiento, incluido el ruido, y por eso funciona muy bien con ellos pero mal con datos nuevos. Lo explico con un gráfico en la sección de <a href="#overfitting-y-underfitting">overfitting y underfitting</a>.</p>
+<p><strong>¿Cuál es la diferencia entre interpretabilidad y explicabilidad?</strong> La interpretabilidad es cuando el propio modelo se puede entender directamente, como los coeficientes de una regresión logística. La explicabilidad es cuando se usa una herramienta externa, como SHAP o LIME, para aproximar por qué un modelo complejo tomó sus decisiones. Lo explico en detalle en la sección de <a href="#interpretabilidad-vs-explicabilidad">interpretabilidad vs.&nbsp;explicabilidad</a>.</p>
 <p><strong>¿Por dónde empiezo?</strong> Por el análisis exploratorio. Aprender a mirar un dataset con criterio es la habilidad que más vas a usar, sin importar el rol.</p>
 </section>
 <section id="lo-que-viene" class="level2">
 <h2 class="anchored" data-anchor-id="lo-que-viene">Lo que viene</h2>
 <p>Cada uno de estos conceptos merece su propio post, con datos reales y código paso a paso. El siguiente será sobre <strong>análisis exploratorio de datos</strong>: cómo hacer el primer contacto con un dataset sin perderte.</p>
-<p>Si algún término de esta guía te quedó confuso o falta alguno que te gustaría ver, escríbeme. Este glosario va a ir creciendo.</p>
+<p>Si algún término de esta guía te quedó confuso o falta alguno que te gustaría ver, <a href="../../about.html">escríbeme</a>. Este glosario va a ir creciendo.</p>
 
 
 </section>
