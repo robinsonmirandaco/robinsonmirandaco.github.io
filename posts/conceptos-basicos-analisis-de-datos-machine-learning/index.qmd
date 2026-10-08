@@ -1,19 +1,19 @@
 ---
 title: "Conceptos básicos de análisis de datos y Machine Learning: guía para empezar desde cero"
-description: "Qué es un dataset, una variable, un modelo, el overfitting o la validación cruzada. Una guía clara y en español con los conceptos básicos de análisis de datos y Machine Learning, con ejemplos en Python."
+description: "Qué es un dataset, una variable, un modelo, el overfitting, la validación cruzada o la diferencia entre interpretabilidad y explicabilidad. Una guía clara y en español con los conceptos básicos de análisis de datos y Machine Learning, con ejemplos en Python."
 author: "Robinson Miranda"
 date: "2026-10-08"
 date-modified: "2026-10-08"
 categories: [fundamentos, análisis de datos, machine learning, glosario]
-keywords: [qué es machine learning, conceptos básicos de machine learning, análisis de datos para principiantes, glosario de machine learning en español, aprendizaje supervisado, overfitting, validación cruzada, python, scikit-learn]
+keywords: [qué es machine learning, conceptos básicos de machine learning, análisis de datos para principiantes, glosario de machine learning en español, aprendizaje supervisado, overfitting, validación cruzada, interpretabilidad vs explicabilidad, IA explicable, python, scikit-learn]
 image: portada.jpg
 image-alt: "Portada del post Conceptos básicos de análisis de datos y Machine Learning, de Robinson Miranda"
 toc: true
 toc-depth: 2
 include-in-header:
   - text: |
-      <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Conceptos básicos de análisis de datos y Machine Learning: guía para empezar desde cero", "inLanguage": "es", "datePublished": "2026-10-08", "dateModified": "2026-10-08", "image": "https://robinsonmirandaco.github.io/posts/conceptos-basicos-analisis-de-datos-machine-learning/portada.jpg", "mainEntityOfPage": "https://robinsonmirandaco.github.io/posts/conceptos-basicos-analisis-de-datos-machine-learning/", "author": {"@type": "Person", "name": "Robinson Miranda", "url": "https://robinsonmirandaco.github.io/about.html", "sameAs": ["https://github.com/robinsonmirandaco", "https://www.linkedin.com/in/robinsonmirandaco/"]}, "keywords": "machine learning, análisis de datos, glosario, python, scikit-learn, overfitting, validación cruzada"}</script>
-      <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Necesito saber mucha matemática para empezar en Machine Learning?", "acceptedAnswer": {"@type": "Answer", "text": "No para empezar. Con estadística básica y Python puedes avanzar bastante. La matemática se vuelve importante cuando quieres entender por qué los modelos se comportan como lo hacen."}}, {"@type": "Question", "name": "¿Qué lenguaje debo aprender primero para análisis de datos y Machine Learning?", "acceptedAnswer": {"@type": "Answer", "text": "Python, porque tiene las librerías más usadas (pandas, scikit-learn, PyTorch) y la comunidad más grande. SQL es el segundo idioma recomendado."}}, {"@type": "Question", "name": "¿Cuál es la diferencia entre un analista de datos y un ingeniero de Machine Learning?", "acceptedAnswer": {"@type": "Answer", "text": "El analista responde preguntas con datos y comunica hallazgos. El ingeniero de Machine Learning construye, evalúa y pone en producción modelos que hacen predicciones de forma automática."}}, {"@type": "Question", "name": "¿Qué es el overfitting en Machine Learning?", "acceptedAnswer": {"@type": "Answer", "text": "Es cuando un modelo memoriza los datos de entrenamiento, incluido el ruido, y por eso funciona muy bien con ellos pero mal con datos nuevos."}}]}</script>
+      <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Conceptos básicos de análisis de datos y Machine Learning: guía para empezar desde cero", "inLanguage": "es", "datePublished": "2026-10-08", "dateModified": "2026-10-08", "image": "https://robinsonmirandaco.github.io/posts/conceptos-basicos-analisis-de-datos-machine-learning/portada.jpg", "mainEntityOfPage": "https://robinsonmirandaco.github.io/posts/conceptos-basicos-analisis-de-datos-machine-learning/", "author": {"@type": "Person", "name": "Robinson Miranda", "url": "https://robinsonmirandaco.github.io/about.html", "sameAs": ["https://github.com/robinsonmirandaco", "https://www.linkedin.com/in/robinsonmirandaco/"]}, "keywords": "machine learning, análisis de datos, glosario, python, scikit-learn, overfitting, validación cruzada, interpretabilidad, explicabilidad"}</script>
+      <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Necesito saber mucha matemática para empezar en Machine Learning?", "acceptedAnswer": {"@type": "Answer", "text": "No para empezar. Con estadística básica y Python puedes avanzar bastante. La matemática se vuelve importante cuando quieres entender por qué los modelos se comportan como lo hacen."}}, {"@type": "Question", "name": "¿Qué lenguaje debo aprender primero para análisis de datos y Machine Learning?", "acceptedAnswer": {"@type": "Answer", "text": "Python, porque tiene las librerías más usadas (pandas, scikit-learn, PyTorch) y la comunidad más grande. SQL es el segundo idioma recomendado."}}, {"@type": "Question", "name": "¿Cuál es la diferencia entre un analista de datos y un ingeniero de Machine Learning?", "acceptedAnswer": {"@type": "Answer", "text": "El analista responde preguntas con datos y comunica hallazgos. El ingeniero de Machine Learning construye, evalúa y pone en producción modelos que hacen predicciones de forma automática."}}, {"@type": "Question", "name": "¿Qué es el overfitting en Machine Learning?", "acceptedAnswer": {"@type": "Answer", "text": "Es cuando un modelo memoriza los datos de entrenamiento, incluido el ruido, y por eso funciona muy bien con ellos pero mal con datos nuevos."}}, {"@type": "Question", "name": "¿Cuál es la diferencia entre interpretabilidad y explicabilidad?", "acceptedAnswer": {"@type": "Answer", "text": "La interpretabilidad es cuando el propio modelo se puede entender directamente, como los coeficientes de una regresión logística. La explicabilidad es cuando se usa una herramienta externa, como SHAP o LIME, para aproximar por qué un modelo complejo tomó sus decisiones."}}]}</script>
 execute:
   warning: false
 ---
@@ -424,11 +424,88 @@ Mejorar uno suele empeorar el otro. A eso se le llama el **trade-off sesgo-varia
 
 ## Parte 6. Más allá de la precisión
 
-### Interpretabilidad y explicabilidad
+Muchos usan estas dos palabras como sinónimos, pero **no son lo mismo**, y confundirlas lleva a malas decisiones. La diferencia está en *de dónde sale el entendimiento*: del modelo mismo o de una herramienta externa que intenta describirlo.
 
-**Qué es:** la capacidad de entender por qué un modelo tomó una decisión. Herramientas como **[SHAP](https://shap.readthedocs.io/en/latest/)** muestran cuánto aportó cada variable a cada predicción.
+### Interpretabilidad
 
-**Por qué importa:** si un modelo niega un crédito, la persona y el regulador merecen saber por qué. Un modelo preciso que nadie puede explicar es difícil de auditar y de confiar.
+**Qué es:** la propiedad de un modelo cuyo funcionamiento interno una persona puede entender directamente, sin herramientas adicionales. Mirando el modelo ves *cómo* decide.
+
+**Ejemplo:** en una regresión logística cada variable tiene un coeficiente. Si el coeficiente de "días de mora" es positivo y grande, sabes que más días de mora aumentan el riesgo, y sabes cuánto. Un árbol de decisión pequeño también es interpretable: puedes seguir las preguntas sí/no de principio a fin.
+
+**Por qué importa:** la explicación *es* el modelo. No hay una capa intermedia que pueda equivocarse.
+
+### Explicabilidad
+
+**Qué es:** la capacidad de dar una explicación sobre las decisiones de un modelo que, por sí mismo, no se entiende (una "caja negra" como un Random Forest, XGBoost o una red neuronal). La explicación la produce **otra herramienta, después de entrenar** el modelo (por eso se le llama explicación *post-hoc*).
+
+**Ejemplo:** técnicas como [SHAP](https://shap.readthedocs.io/en/latest/), [LIME](https://github.com/marcotcr/lime), la [importancia por permutación](https://scikit-learn.org/stable/modules/permutation_importance.html) o los [gráficos de dependencia parcial](https://scikit-learn.org/stable/modules/partial_dependence.html) miran cómo cambian las predicciones cuando cambian las entradas y, a partir de eso, estiman qué variables pesaron más.
+
+**Por qué importa:** permite usar modelos más complejos y poderosos sin renunciar del todo a entenderlos. Pero hay que tener claro que la explicación es una **aproximación** del comportamiento del modelo, no el modelo.
+
+### Interpretabilidad vs. explicabilidad: por qué no son lo mismo {#interpretabilidad-vs-explicabilidad}
+
+| | Interpretabilidad | Explicabilidad |
+|---|---|---|
+| De dónde sale el entendimiento | Del propio modelo | De una herramienta externa, después de entrenar |
+| Modelos típicos | Regresión lineal y logística, árboles pequeños, reglas | Random Forest, gradient boosting, redes neuronales |
+| Herramientas | Coeficientes, reglas del árbol | SHAP, LIME, importancia por permutación, dependencia parcial |
+| Qué tan fiel es | Exacta: describe lo que el modelo realmente hace | Aproximada: puede no reflejar del todo al modelo |
+| Pregunta que responde | "¿Cómo funciona el modelo?" | "¿Qué influyó en este resultado?" |
+
+Hay además dos alcances que aplican a ambas:
+
+- **Global:** cómo se comporta el modelo en general (qué variables importan más en todos los casos).
+- **Local:** por qué tomó *una* decisión concreta (por qué a *este* cliente se le negó el crédito).
+
+::: {.callout-warning}
+## Una explicación puede ser convincente y estar equivocada
+Una explicación post-hoc puede verse muy razonable y aun así no reflejar lo que el modelo hace de verdad. Por eso la investigadora Cynthia Rudin propone, en un artículo muy citado, que en [decisiones de alto impacto se usen modelos interpretables en lugar de explicar cajas negras](https://www.nature.com/articles/s42256-019-0048-x). Si un modelo simple e interpretable logra un rendimiento parecido al de uno complejo, casi siempre es la mejor opción.
+:::
+
+Veámoslo con los mismos datos del ejemplo final. A la izquierda, un modelo **interpretable**: los coeficientes *son* el modelo. A la derecha, una **explicación** de un Random Forest calculada desde afuera, midiendo cuánto empeora el modelo cuando se desordena cada variable.
+
+```{python}
+#| code-fold: true
+#| code-summary: "Ver el código del gráfico"
+#| fig-cap: "Izquierda: interpretabilidad (los coeficientes del modelo). Derecha: explicabilidad (importancia por permutación calculada después de entrenar una caja negra)."
+#| fig-alt: "Dos gráficos de barras horizontales: los coeficientes de una regresión logística y la importancia por permutación de un Random Forest, para las ocho variables más relevantes de cada uno"
+from sklearn.datasets import load_breast_cancer
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.inspection import permutation_importance
+import pandas as pd
+
+cancer = load_breast_cancer(as_frame=True)
+Xa, Xb, ya, yb = train_test_split(cancer.data, cancer.target, test_size=0.25,
+                                  stratify=cancer.target, random_state=0)
+
+# Interpretable: regresión logística sobre datos escalados
+logit = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000)).fit(Xa, ya)
+coefs = pd.Series(logit[-1].coef_[0], index=Xa.columns)
+coefs = coefs.reindex(coefs.abs().sort_values().index)[-8:]
+
+# Caja negra + explicación post-hoc: Random Forest + importancia por permutación
+bosque = RandomForestClassifier(n_estimators=300, random_state=0).fit(Xa, ya)
+perm = permutation_importance(bosque, Xb, yb, n_repeats=20, random_state=0)
+imp = pd.Series(perm.importances_mean, index=Xa.columns).sort_values()[-8:]
+
+fig, axes = plt.subplots(1, 2, figsize=(11, 4.2))
+axes[0].barh(coefs.index, coefs.values,
+             color=[CORAL if v < 0 else TEAL for v in coefs.values])
+axes[0].axvline(0, color=GRAY, lw=1)
+axes[0].set(title="Interpretable: coeficientes", xlabel="Peso en el modelo (negativo = más riesgo de maligno)")
+axes[1].barh(imp.index, imp.values, color=TEAL)
+axes[1].set(title="Explicación post-hoc: Random Forest", xlabel="Caída en accuracy al desordenar la variable")
+plt.tight_layout()
+plt.show()
+```
+
+Fíjate en que los dos modelos no destacan exactamente las mismas variables. No es un error: son preguntas distintas respondidas con herramientas distintas. Los coeficientes te dicen cómo decide la regresión logística. La importancia por permutación te dice de qué variables *depende* el Random Forest para acertar, pero no cómo las combina por dentro.
+
+**Por qué todo esto importa:** si un modelo niega un crédito, la persona y el regulador merecen saber por qué. Y no basta con que exista *una* explicación: hay que saber si viene del modelo mismo o si es una aproximación, y evaluar qué tan confiable es. Si quieres profundizar, el libro gratuito [*Interpretable Machine Learning*](https://christophm.github.io/interpretable-ml-book/) de Christoph Molnar es la referencia más completa.
 
 ### Sesgo algorítmico
 
@@ -528,6 +605,9 @@ El analista responde preguntas con datos y comunica hallazgos. El ingeniero de M
 
 **¿Qué es el overfitting en Machine Learning?**
 Es cuando un modelo memoriza los datos de entrenamiento, incluido el ruido, y por eso funciona muy bien con ellos pero mal con datos nuevos. Lo explico con un gráfico en la sección de [overfitting y underfitting](#overfitting-y-underfitting).
+
+**¿Cuál es la diferencia entre interpretabilidad y explicabilidad?**
+La interpretabilidad es cuando el propio modelo se puede entender directamente, como los coeficientes de una regresión logística. La explicabilidad es cuando se usa una herramienta externa, como SHAP o LIME, para aproximar por qué un modelo complejo tomó sus decisiones. Lo explico en detalle en la sección de [interpretabilidad vs. explicabilidad](#interpretabilidad-vs-explicabilidad).
 
 **¿Por dónde empiezo?**
 Por el análisis exploratorio. Aprender a mirar un dataset con criterio es la habilidad que más vas a usar, sin importar el rol.
